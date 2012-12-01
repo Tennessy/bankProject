@@ -7,8 +7,8 @@
 	$nameDB = 'takl_bank';
 
 	// Raccourci
-	function htmlFileInPhp($fileName) {
-		return ("./html/" . $fileName . ".php");
+	function rootHtml($fileName) {
+		return ("root_html/" . $fileName . ".php");
 	}
 
 ?>

@@ -16,9 +16,9 @@
 		<header>
 			<?php
 				if (isset($_SESSION['id_employee'])) {
-					include(htmlFileInPhp("form_logout"));
+					include(rootHtml("form_logout"));
 				} else {
-					include(htmlFileInPhp("form_login"));
+					include(rootHtml("form_login"));
 				}
 			?>
 		</header>
