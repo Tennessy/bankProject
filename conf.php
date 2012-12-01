@@ -7,7 +7,7 @@
 	$nameDB = 'takl_bank';
 
 	// Raccourci
-	function HtmlFileInPhp($fileName) {
+	function htmlFileInPhp($fileName) {
 		return ("./html/" . $fileName . ".php");
 	}
 

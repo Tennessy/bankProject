@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.4
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Nov 30, 2012 at 10:23 PM
--- Server version: 5.5.25
--- PHP Version: 5.4.4
+-- Client: localhost
+-- Généré le : Sam 01 Décembre 2012 à 19:03
+-- Version du serveur: 5.5.28
+-- Version de PHP: 5.3.10-1ubuntu3.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `takl_bank`
+-- Base de données: `takl_bank`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `accounts`
+-- Structure de la table `accounts`
 --
 
 CREATE TABLE IF NOT EXISTS `accounts` (
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `accounts-type`
+-- Structure de la table `accounts-type`
 --
 
 CREATE TABLE IF NOT EXISTS `accounts-type` (
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `accounts-type` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agenda`
+-- Structure de la table `agenda`
 --
 
 CREATE TABLE IF NOT EXISTS `agenda` (
@@ -63,11 +63,11 @@ CREATE TABLE IF NOT EXISTS `agenda` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Structure de la table `clients`
 --
 
 CREATE TABLE IF NOT EXISTS `clients` (
-  `id_client` int(8) NOT NULL AUTO_INCREMENT,
+  `id_client` int(8) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `id_employee` int(8) unsigned zerofill NOT NULL,
   `lastName` varchar(40) NOT NULL,
   `firstName` varchar(30) NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contracts`
+-- Structure de la table `contracts`
 --
 
 CREATE TABLE IF NOT EXISTS `contracts` (
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `contracts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contracts-type`
+-- Structure de la table `contracts-type`
 --
 
 CREATE TABLE IF NOT EXISTS `contracts-type` (
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `contracts-type` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employees`
+-- Structure de la table `employees`
 --
 
 CREATE TABLE IF NOT EXISTS `employees` (
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `employees`
+-- Contenu de la table `employees`
 --
 
 INSERT INTO `employees` (`id_employee`, `hPasswd`, `category`, `lastName`, `firstName`) VALUES

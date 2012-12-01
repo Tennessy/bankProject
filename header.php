@@ -6,6 +6,7 @@
 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<?php if(function_exists('redirectAutoLogin')) echo redirectAutoLogin(); ?>
 	<title>Login</title>
 	<link href="index.css" media="screen" type="text/css" rel="stylesheet" />
 </head>
@@ -21,5 +22,3 @@
 				}
 			?>
 		</header>
-
-		<body>

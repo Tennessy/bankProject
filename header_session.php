@@ -5,7 +5,7 @@
 	include("conf.php");
 
 	// Gère les déconnexions
-	if ((isset($_GET['get_Logout']))) {
+	if ((isset($_POST['post_Logout']))) {
 			// Suppression des variables de session
 			$_SESSION = array();
 			// Suppression de la session
