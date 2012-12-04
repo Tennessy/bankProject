@@ -1,7 +1,7 @@
 <?php
 
-	if($_SESSION['category'] == 'conseiller') {
-		// Instructions...
+	if ($_SESSION['category'] == 'conseiller') {
+		
 	} else {
 		// On fait rien pour le moment
 	}

@@ -8,7 +8,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<?php if(function_exists('redirectAutoLogin')) echo redirectAutoLogin(); ?>
 	<title>Login</title>
-	<link href="index.css" media="screen" type="text/css" rel="stylesheet" />
+	<link href="takl_bank.css" media="screen" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -16,9 +16,10 @@
 		<header>
 			<?php
 				if (isset($_SESSION['id_employee'])) {
-					include(rootHtml("form_logout"));
+					include(rootPhp("form_logout"));
+					echo 'Connecté en tant que ' . $_SESSION['category'];
 				} else {
-					include(rootHtml("form_login"));
+					include(rootPhp("form_login"));
 				}
 			?>
 		</header>
