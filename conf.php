@@ -10,7 +10,7 @@
 	function showFormError($champ, $message) {
 		echo'
 			<div class=\"form_error\">
-				<p>Erreur dans le formulaire : *' . $champ . '*' . $message . '</p>
+				<p>Erreur dans le formulaire : *' . $champ . '* ' . $message . '</p>
 			</div>
 		';
 	}

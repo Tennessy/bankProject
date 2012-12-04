@@ -14,8 +14,8 @@ if(
 		showFormError('Login', 'Les caractères spéciaux ne sont pas autorisés.');
 		$noFormError = FALSE;
 	}
-	if ($_POST['input_addEmployee_category'] == 'A' || $_POST['input_addEmployee_category'] == 'C') {
-		showFormError('Catégorie', 'Inconnu');
+	if (!($_POST['input_addEmployee_category'] == 'A' || $_POST['input_addEmployee_category'] == 'C')) {
+		showFormError('Catégorie', 'Do not hack me !');
 		$noFormError = FALSE;
 	}
 	if ($noFormError) {
@@ -28,8 +28,9 @@ if(
 			if (!$id_nDB) {
 				echo 'Erreur de connexion à la base de données.';
 			} else {
-				$query = sprintf("INSERT INTO `employees`(`id_employee`, `login`, `hPasswd`, `category`, `lastName`, `firstName`) VALUES ('', '%s', '{$hPasswd}', '{$category}', '%s', '%s')",
+				$query = sprintf("INSERT INTO `employees`(`id_employee`, `login`, `hPasswd`, `category`, `lastName`, `firstName`) VALUES ('', '%s', '{$hPasswd}', '%s', '%s', '%s')",
 					mysql_real_escape_string($_POST['input_addEmployee_login']),
+					mysql_real_escape_string($_POST['input_addEmployee_category']),
 					mysql_real_escape_string($_POST['input_addEmployee_lastName']),
 					mysql_real_escape_string($_POST['input_addEmployee_firstName']));
 				mysql_query($query);
@@ -47,7 +48,7 @@ if(
 		<form method="post" action="admin.php?show=addEmployee" name="form_addEmployee" id="form_addEmployee">
 			<p> <label for="input_addEmployee_login">Login : </label> <input type="text" name="input_addEmployee_login" id="input_addEmployee_login" />
 			</p>
-			<p> <label for="input_addEmployee_passwd">Mot de passe : </label> <input type="text" name="input_addEmployee_passwd" id="input_addEmployee_passwd" />
+			<p> <label for="input_addEmployee_passwd">Mot de passe : </label> <input type="password" name="input_addEmployee_passwd" id="input_addEmployee_passwd" />
 			</p>
 			<p> <label for="input_addEmployee_category">Catégorie : </label>
 				<input type="radio" name="input_addEmployee_category" value="A">Agent
