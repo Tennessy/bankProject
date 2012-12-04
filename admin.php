@@ -1,8 +1,10 @@
 <?php include("header.php"); ?>
 
 <?php
-
-	include('admin/' . $_SESSION['category'] . '.php');
+	
+	$noFormError = TRUE;
+	require_once('admin/navPane.php');
+	require('admin/' . $_SESSION['category'] . '.php');
 
 ?>
 
