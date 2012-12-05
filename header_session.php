@@ -2,6 +2,14 @@
 
 	session_start();
 
+	// DEV DEBUGGING ONLY
+	// En fin de développement, commenter les deux lignes suivantes
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+
+	$assoc_array = array('name' => 'John Smith', 'age' => 35, 'gender' => 'male');
+	$num_array = array(1,2,'three','four');
+
 	include("conf.php");
 
 	// Gère les déconnexions

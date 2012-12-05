@@ -2,7 +2,7 @@
 
 <?php
 	
-	$noFormError = TRUE;
+	$queryDB = TRUE;
 	require_once('admin/navPane.php');
 	require('admin/' . $_SESSION['category'] . '.php');
 
