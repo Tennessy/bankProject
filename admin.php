@@ -3,6 +3,7 @@
 <?php
 	
 	$queryDB = TRUE;
+	$incompleteForm = FALSE;
 	require_once('admin/navPane.php');
 	require('admin/' . $_SESSION['category'] . '.php');
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le : Mar 04 Décembre 2012 à 20:54
+-- Généré le : Mer 05 Décembre 2012 à 22:15
 -- Version du serveur: 5.5.28
 -- Version de PHP: 5.3.10-1ubuntu3.4
 
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `firstName` varchar(30) NOT NULL,
   PRIMARY KEY (`id_employee`),
   KEY `name` (`lastName`,`firstName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Contenu de la table `employees`
@@ -139,11 +139,10 @@ CREATE TABLE IF NOT EXISTS `employees` (
 INSERT INTO `employees` (`id_employee`, `login`, `hPasswd`, `category`, `lastName`, `firstName`) VALUES
 (00000001, 'lavie.alexis', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'D', 'Lavie', 'Alexis'),
 (00000002, 'kolubako.tennessy', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'C', 'Kolubako', 'Tennessy'),
-(00000003, 'lin.shunyan', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'A', 'Lin', 'Shunyan'),
-(00000004, 'lin.shunyan', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'C', 'Lin', 'Shunyan'),
-(00000005, 'lin.shunyan', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'A', 'Lin', 'Shunyan'),
-(00000006, 'kolubako.tennessy', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'C', 'Kolubako', 'Tennessy'),
-(00000007, 'kolubako.tennessy', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'C', 'Kolubako', 'Tennessy');
+(00000008, 'operiol-gerbal.nicolas', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'A', 'Operiol-Gerbal', 'Nicolas'),
+(00000009, 'wijkhuisen.chloe', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'C', 'Wijkhuisen', 'ChloÃ©'),
+(00000010, 'fiaud.nicolas', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'C', 'Fiaud', 'Nicolas'),
+(00000011, 'boufatah.amine', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'A', 'Amine', 'Boufatah');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

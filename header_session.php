@@ -2,8 +2,38 @@
 
 	session_start();
 
+	/*
+		Si un <form> a été envoyé au serveur,
+		on enregistre les valeurs de $_POST et $_FILES dans la session.
+		Puis on rafrachît la page pour éviter le renvoi d'un formulaire,
+		à un probable fur rafraichissement d'une page.
+	*/
+	if (!empty($_POST) || !empty($_FILES)) {
+		$_SESSION['savePOST'] = $_POST;
+		$_SESSION['saveFILES'] = $_FILES;
+
+		$actualFile = $_SERVER['PHP_SELF'];
+		if (!empty($_SERVER['QUERY_STRING'])) {
+			$actualFile = '?' . $_SERVER['QUERY_STRING'];
+		}
+
+		header('Location: ' . $actualFile);
+		exit;
+	}
+	/*
+		Si les valeurs d'un <form>, c'est-à-dire $_POST et $_FILES,
+		ont été sauvegardés dans des variables de session, alors les restaurer,
+		puis l'on nettoie les variables de $_SESSION correspondantes.
+	*/
+	if (isset($_SESSION['savePOST'])) {
+		$_POST = $_SESSION['savePOST'];
+		$_FILES = $_SESSION['saveFILES'];
+
+		unset($_SESSION['savePOST'], $_SESSION['saveFILES']);
+	}
+
 	// DEV DEBUGGING ONLY
-	// En fin de développement, commenter les deux lignes suivantes
+	// En fin de développement, commenter les deux lignes suivantes.
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 

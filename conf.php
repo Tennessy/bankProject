@@ -57,9 +57,17 @@
 		return false;
 	}
 
+	function showFormSuccess($message) {
+		return'
+			<div class="form_success">
+				<p>' . $message . '</p>
+			</div>
+		';
+	}
+
 	// Messages d'erreur
 	function showFormError($champ, $message) {
-		echo'
+		return'
 			<div class="form_error">
 				<p>Erreur dans le formulaire : *' . $champ . '* ' . $message . '</p>
 			</div>

@@ -3,7 +3,7 @@
 	if ($_SESSION['category'] == 'directeur') {
 		
 		// Actions disponibles
-		if ($_GET['show'] == 'addEmployee') {
+		if (isset($_GET['show']) && $_GET['show'] == 'addEmployee') {
 			include(adminPhp("form_addEmployee"));
 		}
 	} else {

@@ -11,11 +11,11 @@ if(
 	if (preg_match('#[^a-zA-Z0-9.\-]#', $_POST['input_addEmployee_login'])) {
 		// Si un caractère autre que des lettres [a-zA-Z], des chiffres [0-9] ou un [.],
 		// est trouvé dans le login alors on affiche un message d'erreur.
-		showFormError('Login', 'Les caractères spéciaux ne sont pas autorisés.');
+		echo showFormError('Login', 'Les caractères spéciaux ne sont pas autorisés.');
 		$queryDB = FALSE;
 	}
 	if (!($_POST['input_addEmployee_category'] == 'A' || $_POST['input_addEmployee_category'] == 'C')) {
-		showFormError('Catégorie', 'Do not hack me !');
+		echo showFormError('Catégorie', 'Do not hack me !');
 		$queryDB = FALSE;
 	}
 	if ($queryDB) {
@@ -27,11 +27,16 @@ if(
 				mysql_real_escape_string($_POST['input_addEmployee_category']),
 				mysql_real_escape_string($_POST['input_addEmployee_lastName']),
 				mysql_real_escape_string($_POST['input_addEmployee_firstName']));
-			mysql_query($query);
+			$validQuery = mysql_query($query);
+			if ($validQuery) {
+				echo showFormSuccess('Ajout réussi');
+			}
 			mysql_close($id_shDB);
 		}
 	}
 
+} else {
+	$incompleteForm = TRUE;
 }
 
 ?>
@@ -39,17 +44,35 @@ if(
 <fieldset>
 		<legend>Ajouter un employé</legend>
 		<form method="post" action="admin.php?show=addEmployee" name="form_addEmployee" id="form_addEmployee">
-			<p> <label for="input_addEmployee_lastName">Nom : </label> <input type="text" name ="input_addEmployee_lastName" id="input_addEmployee_lastName" />
+			<p> <label for="input_addEmployee_lastName">Nom : </label> <input type="text" name ="input_addEmployee_lastName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_lastName'])) echo $_POST['input_addEmployee_lastName']; ?>" id="input_addEmployee_lastName" />
 			</p>
-			<p> <label for="input_addEmployee_firstName">Prénom : </label> <input type="text" name ="input_addEmployee_firstName" id="input_addEmployee_firstName" />
+			<p> <label for="input_addEmployee_firstName">Prénom : </label> <input type="text" name ="input_addEmployee_firstName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_firstName'])) echo $_POST['input_addEmployee_firstName']; ?>" id="input_addEmployee_firstName" />
 			</p>
 			<p> <label for="input_addEmployee_category">Catégorie : </label>
-				<input type="radio" name="input_addEmployee_category" value="A">Agent
-				<input type="radio" name="input_addEmployee_category" value="C">Conseiller
+				<input type="radio" name="input_addEmployee_category" value="A"
+				<?php
+					if ($incompleteForm && isset($_POST['input_addEmployee_category'])) {
+						if ($_POST['input_addEmployee_category'] == 'A') {
+							echo 'checked="yes"';
+						}
+					} else {
+						echo 'checked="yes"';
+					}
+				?>
+				>Agent
+				<input type="radio" name="input_addEmployee_category" value="C"
+				<?php
+					if ($incompleteForm && isset($_POST['input_addEmployee_category'])) {
+						if ($_POST['input_addEmployee_category'] == 'C') {
+							echo 'checked="yes"';
+						}
+					}
+				?>
+				>Conseiller
 			</p>
-			<p> <label for="input_addEmployee_login">Login : </label> <input type="text" name="input_addEmployee_login" id="input_addEmployee_login" />
+			<p> <label for="input_addEmployee_login">Login : </label> <input type="text" name="input_addEmployee_login" required="required" id="input_addEmployee_login" />
 			</p>
-			<p> <label for="input_addEmployee_passwd">Mot de passe : </label> <input type="password" name="input_addEmployee_passwd" id="input_addEmployee_passwd" />
+			<p> <label for="input_addEmployee_passwd">Mot de passe : </label> <input type="password" name="input_addEmployee_passwd" required="required" id="input_addEmployee_passwd" />
 			</p>
 			<p> <input type="submit" value="Envoyer" name="post_addEmployee" /> <input type="reset" value="Réinitialiser" />
 			</p>
