@@ -1,12 +1,14 @@
-<?php include("header.php"); ?>
+<?php require_once("header.php"); ?>
 
 <?php
 	
 	$queryDB = TRUE;
 	$incompleteForm = FALSE;
-	require_once('admin/navPane.php');
-	require('admin/' . $_SESSION['category'] . '.php');
+	include_once('admin/navPane.php');
+	echo '<div id="content">';
+	include_once('admin/' . $_SESSION['category'] . '.php');
+	echo '</div>'
 
 ?>
 
-<?php include("footer.php"); ?>
+<?php require_once("footer.php"); ?>

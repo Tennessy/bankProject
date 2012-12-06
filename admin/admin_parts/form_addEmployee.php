@@ -42,8 +42,8 @@ if(
 ?>
 
 <fieldset>
-		<legend>Ajouter un employé</legend>
-		<form method="post" action="admin.php?show=addEmployee" name="form_addEmployee" id="form_addEmployee">
+		<legend>Nouvel employé</legend>
+		<form method="post" action="admin.php?show=addEmployee" name="form_addEmployee" id="form_addEmployee" class="form_admin">
 			<p> <label for="input_addEmployee_lastName">Nom : </label> <input type="text" name ="input_addEmployee_lastName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_lastName'])) echo $_POST['input_addEmployee_lastName']; ?>" id="input_addEmployee_lastName" />
 			</p>
 			<p> <label for="input_addEmployee_firstName">Prénom : </label> <input type="text" name ="input_addEmployee_firstName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_firstName'])) echo $_POST['input_addEmployee_firstName']; ?>" id="input_addEmployee_firstName" />

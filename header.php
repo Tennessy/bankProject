@@ -8,18 +8,23 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<?php if(function_exists('redirectAutoLogin')) echo redirectAutoLogin(); ?>
 	<title>Login</title>
+	<!--[if lt IE 9]>
+		<script src="html5shiv.js"></script>
+	<![endif]-->
 	<link href="takl_bank.css" media="screen" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
 	<div id="page">
-		<header>
+		<div id="header">
+			<div id="header_login">
 			<?php
 				if (isset($_SESSION['id_employee'])) {
-					include(rootPhp("form_logout"));
 					echo 'Connecté en tant que ' . $_SESSION['category'];
+					include(rootPhp("form_logout"));
 				} else {
 					include(rootPhp("form_login"));
 				}
 			?>
-		</header>
+			</div>
+		</div>

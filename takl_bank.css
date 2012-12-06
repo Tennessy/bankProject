@@ -73,3 +73,37 @@ body {
 }
 
 /** END Page styling **/
+
+/** **/
+#header {
+	border: 1px solid black;
+	background: url("images/header_logo.png") no-repeat top left;
+	padding: 2px 2px 2px 2px;
+	height: 136px;
+}
+
+#header_login {
+	float: right;
+	height: 134px;
+	border: 1px solid red;
+	text-align: right;
+}
+
+#side_nav {
+	float: left;
+	width: 182px;
+	min-height: 300px;
+	margin: 10px 0px 0px 10px;
+	padding: 12px 8px 12px 8px;
+	border: 1px solid black;
+}
+
+#content {
+	float: right;
+	width: 718px;
+	min-height: 300px;
+	padding: 20px 20px 20px 20px;
+	margin: 10px 10px 10px 20px;
+	border: 1px solid black;
+
+}
