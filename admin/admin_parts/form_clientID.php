@@ -9,7 +9,7 @@ if(isset($_GET['action']) && !empty($_GET['action'])){
 	$action = $_GET['action'];
 }
 
-echo '<form name="clientID" method="GET" action="admin.php" > 
+echo '<form name="clientID" method="GET" action="admin.php" class="form_admin" > 
 <fieldset><legend>Choix de l\'id client</legend>';
 
 if(mysql_num_rows($clientList) != 0){
