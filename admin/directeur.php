@@ -7,7 +7,13 @@
 			include_once(adminPhp("form_addEmployee"));
 		}
 		if (isset($_GET['action']) && $_GET['action'] == 'aboutEmployee') {
-			include(adminPhp("form_aboutEmployee"));
+			include_once(adminPhp("form_aboutEmployee"));
+		}
+		if (isset($_GET['action']) && $_GET['action'] == 'addAccountType') {
+			include_once(adminPhp("form_addAccountType"));
+		}
+		if (isset($_GET['action']) && $_GET['action'] == 'addContractType') {
+			include_once(adminPhp("form_addContractType"));
 		}
 
 	} else {
