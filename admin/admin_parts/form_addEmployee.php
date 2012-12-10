@@ -15,7 +15,7 @@ if (
 		$queryDB = FALSE;
 	}
 	if (!($_POST['input_addEmployee_category'] == 'A' || $_POST['input_addEmployee_category'] == 'C')) {
-		echo showFormError('Catégorie', 'Do not hack me !');
+		echo showFormError('Catégorie', 'DO NOT HACK ME !');
 		$queryDB = FALSE;
 	}
 	if ($queryDB) {
@@ -44,37 +44,42 @@ if (
 <form method="post" action="admin.php?action=addEmployee" name="form_addEmployee" id="form_addEmployee" class="form_admin">
 	<fieldset>
 		<legend>Nouvel employé</legend>
-		<p> <label for="input_addEmployee_lastName">Nom : </label> <input type="text" name="input_addEmployee_lastName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_lastName'])) echo $_POST['input_addEmployee_lastName']; ?>" id="input_addEmployee_lastName" />
+		<p> <label for="input_addEmployee_lastName">Nom : </label>
+			<input type="text" name="input_addEmployee_lastName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_lastName'])) echo $_POST['input_addEmployee_lastName']; ?>" id="input_addEmployee_lastName" />
 		</p>
-		<p> <label for="input_addEmployee_firstName">Prénom : </label> <input type="text" name="input_addEmployee_firstName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_firstName'])) echo $_POST['input_addEmployee_firstName']; ?>" id="input_addEmployee_firstName" />
+		<p> <label for="input_addEmployee_firstName">Prénom : </label>
+			<input type="text" name="input_addEmployee_firstName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_firstName'])) echo $_POST['input_addEmployee_firstName']; ?>" id="input_addEmployee_firstName" />
 		</p>
 		<p> <label for="input_addEmployee_category">Catégorie : </label>
 			<input type="radio" name="input_addEmployee_category" value="A"
 			<?php
-			if ($incompleteForm && isset($_POST['input_addEmployee_category'])) {
-				if ($_POST['input_addEmployee_category'] == 'A') {
+				if ($incompleteForm && isset($_POST['input_addEmployee_category'])) {
+					if ($_POST['input_addEmployee_category'] == 'A') {
+						echo 'checked="yes"';
+					}
+				} else {
 					echo 'checked="yes"';
 				}
-			} else {
-				echo 'checked="yes"';
-			}
 			?>
 			>Agent
 			<input type="radio" name="input_addEmployee_category" value="C"
 			<?php
-			if ($incompleteForm && isset($_POST['input_addEmployee_category'])) {
-				if ($_POST['input_addEmployee_category'] == 'C') {
-					echo 'checked="yes"';
+				if ($incompleteForm && isset($_POST['input_addEmployee_category'])) {
+					if ($_POST['input_addEmployee_category'] == 'C') {
+						echo 'checked="yes"';
+					}
 				}
-			}
 			?>
 			>Conseiller
 		</p>
-		<p> <label for="input_addEmployee_login">Login : </label> <input type="text" name="input_addEmployee_login" required="required" id="input_addEmployee_login" />
+		<p> <label for="input_addEmployee_login">Login : </label>
+			<input type="text" name="input_addEmployee_login" required="required" id="input_addEmployee_login" />
 		</p>
-		<p> <label for="input_addEmployee_passwd">Mot de passe : </label> <input type="password" name="input_addEmployee_passwd" required="required" id="input_addEmployee_passwd" />
+		<p> <label for="input_addEmployee_passwd">Mot de passe : </label>
+			<input type="password" name="input_addEmployee_passwd" required="required" id="input_addEmployee_passwd" />
 		</p>
-		<p> <input type="submit" value="Envoyer" name="post_addEmployee" /> <input type="reset" value="Réinitialiser" />
+		<p> <input type="submit" value="Envoyer" name="post_addEmployee" />
+			<input type="reset" value="Réinitialiser" />
 		</p>
 	</fieldset>
 </form>

@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<?php if(function_exists('redirectAutoLogin')) echo redirectAutoLogin(); ?>
-	<title>Login</title>
+	<title>TAKL Bank</title>
 	<!--[if lt IE 9]>
 		<script src="html5shiv.js"></script>
 	<![endif]-->
