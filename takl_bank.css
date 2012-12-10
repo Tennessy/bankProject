@@ -1,10 +1,8 @@
 /** BEGIN Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html **/
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,15 +46,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /** END Reset default browser CSS **/
 
 
 /** BEGIN Page styling **/
-
-#page {
+div#page {
 	background: none repeat scroll 0 0 #FFFFFF;
-	background-image: url("images/background_page");
+	background-image: url("images/background_page.png");
 	box-shadow: 0px 1px 4px #CCCCCC;
 	margin:0 auto;
 	text-align: left; /* Resetting the text-align property to it's default */
@@ -66,54 +62,119 @@ table {
 
 body {
 	background: none repeat scroll 0 0 #FFFFFF;
-	background-image: url("images/background_body");
+	background-image: url("images/background_body.png");
 	margin-top: 5px;
 	margin-bottom: 5px;
 	text-align: center; /* Tip to make IE center the page */
 }
-
 /** END Page styling **/
 
-/** **/
-#header {
-	border: 1px solid black;
-	background: url("images/header_logo.png") no-repeat top left;
-	padding: 2px 2px 2px 2px;
-	height: 136px;
+/** BEGIN Header styling **/
+div#header {
+	background: url("images/header_background.png");
+	border-bottom: 3px solid #4B4B4B;
+	height: 140px;
 }
 
-#header_login {
+div#header_login {
 	float: right;
-	height: 134px;
-	border: 1px solid red;
+	height: 115px;
+	width: 250px;
+	margin: 10px 8px 15px 8px;
+	border: 1px solid #1879D2;
+	border-radius: 3px;
 	text-align: right;
+	background: url("images/header_login_background.png");
 }
+/** END Header styling **/
 
-#side_nav {
+/** BEGIN Navigation + Content divs styling **/
+div#side_nav {
+	background-color: white;
+	display: block;
 	float: left;
 	width: 182px;
 	min-height: 300px;
-	margin: 10px 0px 0px 10px;
+	margin: 20px 0px 0px 10px;
 	padding: 12px 8px 12px 8px;
-	border: 1px solid black;
-	display: inline-block;
+	border: 1px solid #7E7E7E;
 	overflow: auto;
 }
 
-#content {
-	float: right;
+div#content {
+	background-color: white;
+	background: url("images/content_background.png");
+	display: block;
 	width: 718px;
 	min-height: 300px;
 	padding: 20px 20px 20px 20px;
-	margin: 10px 10px 10px 20px;
-	border: 1px solid black;
+	margin: 20px 10px 10px 227px;
+	border: 1px solid #7E7E7E;
 	overflow: auto;
 }
+/** END Navigation + Content divs styling **/;
 
-/** **/;
+/** BEGIN Form styling **/
+.form_admin form {
+	width: 100%;
+}
 
-/** BEGIN Default Table Styling **/
+.form_admin fieldset {
+	margin-bottom: 10px;
+	padding: 10px 10px 10px 10px;
+	border: 1px solid #CCCCCC
+}
 
+.form_admin fieldset:hover {
+	background-color: #FFFFFF;
+}
+
+.form_admin legend {
+	margin-left: 10px;
+	padding: 0px 10px;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	color: #999999;
+}
+
+.form_admin label {
+	display: block;
+	background-color: #FFCC66;
+	float: left;
+	width: 39%;
+	height: 18px;
+	text-align: right;
+	letter-spacing: 2px;
+	padding-right: 1%;
+}
+
+.form_admin input[type="text"], .form_admin input[type="password"], .form_admin select, .form_admin textarea {
+	margin-left: 1%;
+	width: 58%;
+	border: 1px solid #CCCCCC;
+}
+
+.form_admin input:hover, .form_admin input:focus, .form_admin select:hover, .form_admin select:focus,
+.form_admin textarea:hover, .form_admin textarea:focus {
+	background-color: DDEEFF;
+	border: 1px solid #999999;
+}
+
+.form_admin input[type="submit"], .form_admin input[type="reset"] {
+	border: 1px solid #DDEEFF;
+	width: 27%;
+}
+.form_admin input[type="submit"]:hover {
+	background-color: #66CC33;
+	cursor: pointer;
+}
+.form_admin input[type="reset"]:hover {
+	background-color: #E6484D;
+	cursor: pointer;
+}
+/** END Form styling **/
+
+/** BEGIN Default table styling **/
 table {
 	border-collapse: collapse;
 }
@@ -128,5 +189,4 @@ td {
 caption {
 	font-weight: bold;
 }
-
-/** END Default Table Styling **/
+/** END Default table styling **/
