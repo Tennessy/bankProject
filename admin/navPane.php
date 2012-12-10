@@ -13,6 +13,7 @@
 		echo 	'<li><a href="admin.php">Choisir un client</a></li>';
 		echo 	'<li><a href="admin.php?action=showClientDatas&clientID='.$clientID.'">Consulter la fiche client</a></li>';
 		echo 	'<li><a href="admin.php?action=changeClientDatas&clientID='.$clientID.'">Modifier la fiche client</a></li>';
+		echo 	'<li><a href="admin.php?action=transferMoney&clientID='.$clientID.'">Dépot/Retrait</a></li>';
 		echo '</ul>';
 	}
 

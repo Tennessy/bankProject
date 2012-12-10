@@ -9,23 +9,32 @@ if($clientDatas != null){
 
 	echo '<input type="hidden" name="0" value="'. $clientDatas[0] .'"/>';
 	echo '<input type="hidden" name="1" value="'. $clientDatas[1] .'"/>';
+	$birthDate = explode('-', $clientDatas[6]);
 
 	for($i=2; $i<17; $i++){
 		switch ($i){
 			case 6:
-			echo '<label for="jours">Date de naissance : <select name="jours">';
+			echo '<label for="jours">Date de naissance : <select name="6">';
 			for($j=1; $j<=31; $j++){
-				echo '<option value="'.$j.'">'.$j.'</option>';
+				echo '<option value="'.$j.'" ';
+				if($birthDate[2] == $j){echo 'selected="selected"';}
+				echo '>'.$j.'</option>';
 			}
-			echo '</select>';
+			echo '</select>'; 
+
 			echo '<select name="mois">';
 			for($j=1; $j<=12; $j++){
-				echo '<option value="'.$j.'">'.$j.'</option>';
+				echo '<option value="'.$j.'" ';
+				if($birthDate[1] == $j){echo 'selected="selected"';}
+				echo '>'.$j.'</option>';
 			}
 			echo '</select>';
+
 			echo '<select name="annee">';
 			for($j=1900; $j<=Date('Y'); $j++){
-				echo '<option value="'.$j.'">'.$j.'</option>';
+				echo '<option value="'.$j.'" ';
+				if($birthDate[0] == $j){echo 'selected="selected"';}
+				echo '>'.$j.'</option>';
 			}
 			echo '</select><br/>';
 			break;
