@@ -7,15 +7,33 @@ $clientDatas = getClientDatas($_GET['clientID']);
 
 if($clientDatas != null){
 
-	echo '<input type="hidden" name="0" value="'. $clientDatas[0] .'"/></br>';
-	echo '<input type="hidden" name="1" value="'. $clientDatas[1] .'"/></br>';
+	echo '<input type="hidden" name="0" value="'. $clientDatas[0] .'"/>';
+	echo '<input type="hidden" name="1" value="'. $clientDatas[1] .'"/>';
 
 	for($i=2; $i<17; $i++){
 		switch ($i){
+			case 6:
+			echo '<label for="jours">Date de naissance : <select name="jours">';
+			for($j=1; $j<=31; $j++){
+				echo '<option value="'.$j.'">'.$j.'</option>';
+			}
+			echo '</select>';
+			echo '<select name="mois">';
+			for($j=1; $j<=12; $j++){
+				echo '<option value="'.$j.'">'.$j.'</option>';
+			}
+			echo '</select>';
+			echo '<select name="annee">';
+			for($j=1900; $j<=Date('Y'); $j++){
+				echo '<option value="'.$j.'">'.$j.'</option>';
+			}
+			echo '</select><br/>';
+			break;
+
 			case 7:
-			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label> <input type="radio" name="' .$i;
+			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label> <input type="radio" name="' .$i .'"';
 			if($clientDatas['gender'] == 'm'){
-				echo   'checked="checked ';
+				echo   '" checked="checked ';
 			}
 			echo '" value="m">Homme';
 			echo '<input type="radio" name="' .$i;
@@ -26,10 +44,17 @@ if($clientDatas != null){
 			break;
 
 			case 9:
-			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label> <input type="radio" name="' .$i;
-			if($clientDatas[9] == )
-			echo '<input type="radio" name="' .$i. '" value="c">Concubinage';
-			echo '<input type="radio" name="' .$i. '" value="m">Marié <br/>';
+			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label> <input type="radio" name="' .$i . '"';
+			if($clientDatas['civilStatus'] == 's'){ echo 'checked="checked" ';}
+			echo 'value="s" >Celibataire';
+
+			echo '<input type="radio" name="' .$i .'"';
+			if($clientDatas['civilStatus'] == 'c'){ echo 'checked="checked" ';}
+			echo 'value="c" >Concubinage';
+
+			echo '<input type="radio" name="' .$i .'"';
+			if($clientDatas['civilStatus'] == 'm'){ echo 'checked="checked" ';}
+			echo 'value="c" >Marié<br/>';
 			break;
 
 			default :
