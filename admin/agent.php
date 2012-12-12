@@ -13,6 +13,10 @@ if($_SESSION['category'] == 'agent'){
 			include('admin/admin_parts/form_changeClientDatas.php');
 		}
 
+		else if(isset($_GET['action']) && $_GET['action'] == 'transferMoney'){
+			include('admin/admin_parts/form_moneyTransfer.php');
+		}
+
 		else{
 			echo("Merci de choisir un action valide");
 		}
