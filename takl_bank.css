@@ -101,6 +101,21 @@ div#side_nav {
 	overflow: auto;
 }
 
+div#side_nav p#nav_menu {
+	text-align: center;
+	margin-bottom: 30px;
+	width: 182px;
+	background-color: #CCCCCC;
+}
+
+div#side_nav ul {
+	margin-bottom: 10px;
+}
+
+div#side_nav ul li {
+	margin-top: 5px;
+}
+
 div#content {
 	background-color: white;
 	background: url("images/content_background.png");
@@ -112,54 +127,77 @@ div#content {
 	border: 1px solid #7E7E7E;
 	overflow: auto;
 }
-/** END Navigation + Content divs styling **/;
+/** END Navigation + Content divs styling **/
+
+/** BEGIN Message styling **/
+.form_error {
+	margin: 0px 0px 20px 0px;
+	background-color: #E67302;
+	border-radius: 3px;
+	font-size: 14px;
+	padding: 5px;
+}
+.form_success {
+	margin: 0px 0px 20px 0px;
+	background-color: #56B04A;
+	border-radius: 3px;
+	font-size: 14px;
+	padding: 5px;
+}
+/** END Message styling **/
 
 /** BEGIN Form styling **/
-.form_admin form {
+.form_admin {
 	width: 100%;
 }
-
 .form_admin fieldset {
+	margin-bottom: 30px;
+	border: 1px solid #CCCCCC;
+	padding: 0px 20px;
+	background-color: #FAFAFA;
+	padding: 15px;
+}
+.form_admin #fieldset_submit {
 	margin-bottom: 10px;
-	padding: 10px 10px 10px 10px;
-	border: 1px solid #CCCCCC
+	text-align: right;
 }
-
 .form_admin fieldset:hover {
-	background-color: #FFFFFF;
+	background-color: #EFEFEF;
 }
-
 .form_admin legend {
 	margin-left: 10px;
 	padding: 0px 10px;
 	border-left: 1px solid #CCCCCC;
 	border-right: 1px solid #CCCCCC;
-	color: #999999;
+	color: #FFFFFF;
+	background-color: #777777;
 }
-
 .form_admin label {
-	display: block;
 	background-color: #FFCC66;
+	display: inline-block;
 	float: left;
 	width: 39%;
-	height: 18px;
 	text-align: right;
 	letter-spacing: 2px;
 	padding-right: 1%;
+	height: 18px;
 }
-
-.form_admin input[type="text"], .form_admin input[type="password"], .form_admin select, .form_admin textarea {
+.form_admin input[type="text"], .form_admin input[type="radio"], .form_admin input[type="password"], .form_admin select, .form_admin textarea {
 	margin-left: 1%;
+	display: inline-block;
+}
+.form_admin p {
+	margin-top: 15px;
+}
+.form_admin input[type="text"], .form_admin input[type="password"], .form_admin select, .form_admin textarea {
 	width: 58%;
 	border: 1px solid #CCCCCC;
 }
-
 .form_admin input:hover, .form_admin input:focus, .form_admin select:hover, .form_admin select:focus,
 .form_admin textarea:hover, .form_admin textarea:focus {
 	background-color: DDEEFF;
 	border: 1px solid #999999;
 }
-
 .form_admin input[type="submit"], .form_admin input[type="reset"] {
 	border: 1px solid #DDEEFF;
 	width: 27%;
@@ -171,6 +209,15 @@ div#content {
 .form_admin input[type="reset"]:hover {
 	background-color: #E6484D;
 	cursor: pointer;
+}
+
+.form_admin input[type="submit"], .form_admin input[type="reset"] {
+	border-radius: 3px;
+}
+
+/* Pour les prénoms */
+.form_admin #input_firstName, .form_admin #input_secondName, .form_admin #input_thirdName {
+	width: 17.9%;
 }
 /** END Form styling **/
 

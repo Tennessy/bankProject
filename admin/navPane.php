@@ -1,7 +1,8 @@
 <?php
 	
 	echo '<div id="side_nav">';
-	echo '<p>Menu : <br />';
+	echo '<p id="nav_menu">Menu</p>';
+	echo '<p>';
 
 	if (isset($_SESSION['category'])) {
 		if ($_SESSION['category'] == 'agent') {
@@ -22,6 +23,7 @@
 			echo '<b>Client</b>';
 			echo '<ul>';
 			echo 	'<li><a href="admin.php?action=addClient">Ajouter un client</a></li>';
+			echo 	'<li><a href="admin.php?action=sellContract">Vendre un contrat</a></li>';
 			echo '</ul>';
 			echo '<b>Planning</b>';
 		}
