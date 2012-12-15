@@ -18,11 +18,13 @@ if (
 		echo showFormError('Catégorie', 'DO NOT HACK ME !');
 		$queryDB = FALSE;
 	}
+
 	if ($queryDB) {
 		$hPasswd = sha1($_POST['input_addEmployee_passwd']);
 		$id_shDB = quickConnectDB();
-		if ($id_shDB != NULL) {
-			$query = sprintf("INSERT INTO `employees`(`id_employee`, `login`, `hPasswd`, `category`, `lastName`, `firstName`) VALUES ('', '%s', '{$hPasswd}', '%s', '%s', '%s')",
+		echo $id_shDB;
+		if ($id_shDB) {
+			$query = sprintf("INSERT INTO `employees`(`id_employee`, `login`, `hPasswd`, `category`, `lastName`, `firstName`) VALUES ('', '%s', '{$hPasswd}', '%s', '%s', '%s');",
 				mysql_real_escape_string($_POST['input_addEmployee_login']),
 				mysql_real_escape_string($_POST['input_addEmployee_category']),
 				mysql_real_escape_string($_POST['input_addEmployee_lastName']),

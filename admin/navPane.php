@@ -1,6 +1,11 @@
 <?php
 
 echo '<div id="side_nav">';
+echo '<p id="nav_menu">Menu</p>';
+echo '<p>';
+
+
+echo '<div id="side_nav">';
 echo '<p>Menu : <br />';
 
 if (isset($_SESSION['category'])) {
@@ -19,11 +24,11 @@ if (isset($_SESSION['category'])) {
 		echo '</ul>';
 	}
 
-
 	if ($_SESSION['category'] == 'conseiller') {
 		echo '<b>Client</b>';
 		echo '<ul>';
 		echo 	'<li><a href="admin.php?action=addClient">Ajouter un client</a></li>';
+		echo 	'<li><a href="admin.php?action=sellContract">Vendre un contrat</a></li>';
 		echo '</ul>';
 		echo '<b>Planning</b>';
 	}
