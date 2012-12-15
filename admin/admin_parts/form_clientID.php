@@ -8,10 +8,11 @@ $action = 'showClientDatas';
 if(isset($_GET['action']) && !empty($_GET['action'])){
 	$action = $_GET['action'];
 }
+?>
+<form name="clientID" method="GET" action="admin.php" class="form_admin" > 
+<fieldset><legend>Choix de l'id client</legend>
 
-echo '<form name="clientID" method="GET" action="admin.php" class="form_admin" > 
-<fieldset><legend>Choix de l\'id client</legend>';
-
+<?php
 if(mysql_num_rows($clientList) != 0){
 	
 	echo '<input type="hidden" name="action" value="'.$action.'"/>
@@ -28,8 +29,5 @@ else{
 }
 
 echo '</fieldset> </form>';
-
-
-
 
 ?>
