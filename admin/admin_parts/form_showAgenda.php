@@ -37,11 +37,11 @@ if($temp != 0){
 
 if(isset($_POST['actionAgenda']) && !empty($_POST['actionAgenda']) && ($_POST['actionAgenda'] == 'addEvent')){
 	if(isset($_POST['date']) && !empty($_POST['date']) && isset($_POST['time']) && !empty($_POST['time']) && is_numeric($_POST['time'])){
-		$date = explode('-', $_POST['date']);
+		$datePost = explode('-', $_POST['date']);
 
-		if(checkdate($date[1], $date[0], $date[2])){
+		if(checkdate($datePost[1], $datePost[0], $datePost[2])){
 			$time = $_POST['time'].':00:00';
-			$date = $date[2].'-'.$date[1].'-'.$date[0];
+			$datePost = $datePost[2].'-'.$datePost[1].'-'.$datePost[0];
 
 			$dateList = array();
 			for($i=0; $i<7; $i++){
@@ -49,10 +49,10 @@ if(isset($_POST['actionAgenda']) && !empty($_POST['actionAgenda']) && ($_POST['a
 			}
 
 			$bd = quickConnectDB();
-			$verifDispo = mysql_query("SELECT * FROM agenda WHERE id_employee='{$_POST['conseillerID']}' AND ( startingDate IN (".implode(',', $dateList)." )) AND startingTime='{$time}'");
+			$verifDispo = mysql_query("SELECT * FROM agenda WHERE id_employee='{$_POST['conseillerID']}' AND startingDate='{$datePost}'  AND startingTime='{$time}'");
 
 			if(mysql_num_rows($verifDispo) == 0 && $time != '12:00:00'){
-				mysql_query("INSERT INTO `agenda` (`id_client`, `id_employee`, `startingDate`, `startingTime`, `motif`) VALUES ('{$_POST['clientID']}', '{$_POST['conseillerID']}', '{$date}', '{$time}', '{$_POST['motif']}' )");
+				mysql_query("INSERT INTO `agenda` (`id_client`, `id_employee`, `startingDate`, `startingTime`, `motif`) VALUES ('{$_POST['clientID']}', '{$_POST['conseillerID']}', '{$datePost}', '{$time}', '{$_POST['motif']}' )");
 
 				$motif=explode('-', $_POST['motif']);
 				if($motif[0] == "openAccount"){
