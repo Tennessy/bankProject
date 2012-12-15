@@ -5,9 +5,6 @@ echo '<p id="nav_menu">Menu</p>';
 echo '<p>';
 
 
-echo '<div id="side_nav">';
-echo '<p>Menu : <br />';
-
 if (isset($_SESSION['category'])) {
 	if ($_SESSION['category'] == 'agent') {
 
