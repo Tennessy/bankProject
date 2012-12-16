@@ -44,7 +44,14 @@ if(mysql_num_rows($clientAccountList) != 0){
 		$accountType = mysql_query("SELECT `name` FROM `accounts-type` WHERE `id_account-type`='{$clientAccounts['account-type']}'");
 		$accountTypeName = mysql_fetch_array($accountType);
 
-		echo '<form action="admin.php?action=transferMoney&clientID='. $_GET['clientID'] .'" method="POST" ><fieldset><legend>Compte '. $accountTypeName['name'] .'</legend><input type="hidden" name="accountID" value="'.$clientAccounts['id_account'].'"  <label for="balanceAccount">Balance du compte : <input type="text" disabled="disabled" name="balanceAccount" value="'.$clientAccounts['balance'].'€" /></label><br/><label for"depot">Depot : <input type="text" name="depot"/></label><br/><label for"retrait">Retrait : <input type="text" name="retrait"/><br/></label><input type="submit"/> </fieldset> </form>';
+		echo '<form onSubmit="return verifTransfer(this)" class="form_admin" action="admin.php?action=transferMoney&clientID='. $_GET['clientID'] .'" method="POST" >
+		<fieldset><legend>Compte '. $accountTypeName['name'] .'</legend>
+		<input type="hidden" name="accountID" value="'.$clientAccounts['id_account'].'"> 
+		 <label for="balanceAccount">Balance du compte :"</label> <input type="text" disabled="disabled" name="balanceAccount" value="'.$clientAccounts['balance'].'€" ><br/>
+		 <label for"depot">Depot : </label><input type="text" name="depot"><br/>
+		 <label for"retrait">Retrait : </label><input type="text" name="retrait"><br/>
+		 <input type="submit"> 
+		 </fieldset> </form>';
 
 	}
 
