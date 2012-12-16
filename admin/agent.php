@@ -1,9 +1,10 @@
 <?php
 
 $dataName = array('id client', 'id employee', 'Nom', 'Prenom', 'Deuxième prenom', 'Troisième prenom', 'Date de naissance', 'Genre', 'Emploi', 'Status civil', 'Adresse', 'Ville', 'Code postal', 'Etat', 'Numero de Telephone', 'Numero de portable', 'Email');
+$months = array('Janvier','Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
 
 if($_SESSION['category'] == 'agent'){
-	if(isset($_GET['clientID']) && !empty($_GET['clientID'])){
+	if(isset($_GET['clientID']) && !empty($_GET['clientID']) && getClientDatas($_GET['clientID']) != null){
 
 		if(isset($_GET['action']) && $_GET['action'] == 'showClientDatas'){
 			include('admin/admin_parts/form_showClientDatas.php');
@@ -26,9 +27,10 @@ if($_SESSION['category'] == 'agent'){
 		}
 	}
 
-	
-
 	else{
+		if(isset($_GET['clientID']) && !empty($_GET['clientID'])){
+			echo 'Ce client n\'éxiste pas dans la base de donnée';
+		}
 		include('admin/admin_parts/form_clientID.php');
 	}
 }
