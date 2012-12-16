@@ -83,24 +83,31 @@ if (
 		if ($queryDB) {
 			$id_shDB = quickConnectDB();
 			if ($id_shDB != null) {
-				$query = "SELECT * FROM `clients` WHERE lower(concat_ws(' ', `lastName`, `firstName`)) LIKE lower('%" . mysql_real_escape_string($_GET['lastName']). " " . mysql_real_escape_string($_GET['firstName']) . "%');";
+				$query = "SELECT * FROM `clients` WHERE lower(concat_ws(' ', `lastName`, `firstName`)) LIKE lower('%" . mysql_real_escape_string($_GET['lastName']). "% %" . mysql_real_escape_string($_GET['firstName']) . "%');";
 				$rep = mysql_query($query);
 				if (mysql_num_rows($rep) != 0) {
 					echo'
-						<table class="table_searchClient">
-							<tr>
-								<td>ID</td>
-								<td>Nom</td>
-								<td>Prénoms</td>
-								<td>Ville</td>
-							</tr>
+						<form class="form_admin">
+							<fieldset>
+								<legend>Résultat de la recherche</legend>
+								<table class="table_searchClient">
+									<tr>
+										<td>ID</td>
+										<td>Nom</td>
+										<td>Prénoms</td>
+										<td>Ville</td>
+									</tr>
 						';
 					while ($result = mysql_fetch_array($rep)) {
 						echo '<tr>';
 						echo '<td><a href="admin.php?action=sellContract&idClient=' . $result['id_client'] . '">' . $result['id_client'] . '</a>' . '</td><td>' . $result['lastName'] . '</td><td>' . $result['firstName'] . ' ' . $result['secondName'] . ' ' . $result['thirdName'] . '</td><td>' . $result['address_city'] . '</td>';
 						echo '</tr>';
 					}
-					echo '</table>';
+					echo'
+								</table>
+							</fieldset>
+						</form>
+					';
 				}
 				mysql_close($id_shDB);
 			}

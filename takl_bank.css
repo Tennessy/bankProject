@@ -219,6 +219,10 @@ div#content {
 .form_admin #input_firstName, .form_admin #input_secondName, .form_admin #input_thirdName {
 	width: 17.9%;
 }
+/* Pour les input dans les tables */
+.table_input {
+	
+}
 /** END Form styling **/
 
 /** BEGIN Default table styling **/

@@ -6,21 +6,15 @@
 
 	if (isset($_SESSION['category'])) {
 		if ($_SESSION['category'] == 'agent') {
-
-
-		echo '<ul>';
-		echo 	'<li><a href="admin.php">Choisir un client</a></li>';
-		echo 	'<li><a href="admin.php?action=showClientDatas&clientID='.$clientID.'">Consulter la fiche client</a></li>';
-		echo 	'<li><a href="admin.php?action=changeClientDatas&clientID='.$clientID.'">Modifier la fiche client</a></li>';
-		echo 	'<li><a href="admin.php?action=transferMoney&clientID='.$clientID.'">Dépot/Retrait</a></li>';
-		echo '</ul>';
-
-
-		echo '<ul>';
-		echo 	'<li><a href="admin.php">Choisir un client</a></li>';
-		echo 	'<li><a href="admin.php?action=showClientDatas&clientID='.$clientID.'">Consulter la fiche client</a></li>';
-		echo 	'<li><a href="admin.php?action=changeClientDatas&clientID='.$clientID.'">Modifier la fiche client</a></li>';
-		echo '</ul>';
+			if(!isset($clientID)) {
+				$clientID = '';
+			}
+			echo '<ul>';
+			echo 	'<li><a href="admin.php">Choisir un client</a></li>';
+			echo 	'<li><a href="admin.php?action=showClientDatas&clientID='.$clientID.'">Consulter la fiche client</a></li>';
+			echo 	'<li><a href="admin.php?action=changeClientDatas&clientID='.$clientID.'">Modifier la fiche client</a></li>';
+			echo 	'<li><a href="admin.php?action=transferMoney&clientID='.$clientID.'">Dépot/Retrait</a></li>';
+			echo '</ul>';
 		}
 
 		if ($_SESSION['category'] == 'conseiller') {
@@ -28,6 +22,8 @@
 			echo '<ul>';
 			echo 	'<li><a href="admin.php?action=addClient">Ajouter un client</a></li>';
 			echo 	'<li><a href="admin.php?action=sellContract">Vendre un contrat</a></li>';
+			echo 	'<li><a href="admin.php?action=openAccount">Ouvrir un compte</a></li>';
+			echo 	'<li><a href="admin.php?action=modifyOverdraft">Modifier un découvert</a></li>';
 			echo '</ul>';
 			echo '<b>Planning</b>';
 		}
