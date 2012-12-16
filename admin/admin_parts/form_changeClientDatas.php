@@ -7,8 +7,8 @@ $clientDatas = getClientDatas($_GET['clientID']);
 
 if($clientDatas != null){
 
-	echo '<input type="hidden" name="0" value="'. $clientDatas[0] .'"/>';
-	echo '<input type="hidden" name="1" value="'. $clientDatas[1] .'"/>';
+	echo '<input type="hidden" name="0" value="'. $clientDatas[0] .'">';
+	echo '<input type="hidden" name="1" value="'. $clientDatas[1] .'">';
 	$birthDate = explode('-', $clientDatas[6]);
 
 	for($i=2; $i<17; $i++){
@@ -67,7 +67,7 @@ if($clientDatas != null){
 			break;
 
 			default :
-			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label><input type="text" name="' . $i . '" value="'. $clientDatas[$i] .'"/></br>';
+			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label><input type="text" name="' . $i . '" value="'. $clientDatas[$i] .'"></br>';
 			break;
 		}
 
@@ -75,7 +75,7 @@ if($clientDatas != null){
 		
 	}
 
-	echo "<input type='submit' name='action' value='modifier'/></fieldset></form>";
+	echo "<input type='submit' name='action' value='modifier'></fieldset></form>";
 }
 
 echo '</fieldset></form>';
