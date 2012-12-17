@@ -18,6 +18,9 @@
 		if (isset($_GET['action']) && $_GET['action'] == 'deleteContract') {
 			include_once(adminPhp("form_deleteContract"));
 		}
+		if (isset($_GET['action']) && $_GET['action'] == 'deleteAccount') {
+			include_once(adminPhp("form_deleteAccount"));
+		}
 
 	} else {
 		// On fait rien pour le moment
