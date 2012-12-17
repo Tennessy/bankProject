@@ -15,6 +15,9 @@
 		if (isset($_GET['action']) && $_GET['action'] == 'modifyOverdraft') {
 			include_once(adminPhp("form_modifyOverdraft"));
 		}
+		if (isset($_GET['action']) && $_GET['action'] == 'deleteContract') {
+			include_once(adminPhp("form_deleteContract"));
+		}
 
 	} else {
 		// On fait rien pour le moment

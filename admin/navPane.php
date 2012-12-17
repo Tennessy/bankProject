@@ -28,6 +28,7 @@
 			echo 	'<li><a href="admin.php?action=sellContract">Vendre un contrat</a></li>';
 			echo 	'<li><a href="admin.php?action=openAccount">Ouvrir un compte</a></li>';
 			echo 	'<li><a href="admin.php?action=modifyOverdraft">Modifier le découvert</a></li>';
+			echo 	'<li><a href="admin.php?action=deleteContract">Résilier un contrat</a></li>';
 			echo '</ul>';
 			echo '<b>Planning</b>';
 		}

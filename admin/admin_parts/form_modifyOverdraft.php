@@ -42,7 +42,7 @@ if (
 					echo'
 						<form method="post" action="admin.php?action=modifyOverdraft" name="form_modifyOverdraft" id="form_modifyOverdraft" class="form_admin">
 							<fieldset>
-								<legend>Ouvrir un/des compte(s)</legend>
+								<legend>Modifier le découvert d\'un/des compte(s)</legend>
 								<table class="table_modifyOverdraft">
 									<tr>
 										<td>Modifier ?</td>
