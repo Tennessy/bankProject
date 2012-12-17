@@ -1,5 +1,32 @@
 <?php
 
+if (
+	(isset($_POST['input_modifyContractType_name']) && !empty($_POST['input_modifyContractType_name'])) &&
+	(isset($_POST['input_modifyContractType_documentsRequired']) && !empty($_POST['input_modifyContractType_documentsRequired']))
+) {
+
+	if(preg_match('#[^0-9]#', $_POST['input_modifyContractType_monthlyCost'])) {
+		echo showFormError('Coût mensuel', 'Veuillez entrer un chiffre.');
+		$queryDB = FALSE;
+	}
+	if ($queryDB) {
+		$id_shDB = quickConnectDB();
+		if ($id_shDB != NULL) {
+			$query = sprintf("UPDATE `contracts-type` SET `name`='%s', `monthlyCost`='%s', `documentsRequired`='%s' WHERE `id_contract-type`='%s'",
+				mysql_real_escape_string($_POST['input_modifyContractType_name']),
+				mysql_real_escape_string($_POST['input_modifyContractType_monthlyCost']),
+				mysql_real_escape_string($_POST['input_modifyContractType_documentsRequired']),
+				mysql_real_escape_string($_POST['input_modifyContractType_id_contract-type']));
+			$validQuery = mysql_query($query);
+			if ($validQuery) {
+				echo showFormSuccess('Modification réussie');
+			}
+			mysql_close($id_shDB);
+		}
+	}
+
+}
+
 if ($queryDB) {
 	$id_shDB = quickConnectDB();
 	if ($id_shDB != NULL) {
@@ -55,7 +82,8 @@ if (isset($_GET['id_contract-type'])) {
 						</p>
 						<p> <label for="input_modifyContractType_documentsRequired">Documents requis : </label> <textarea rows="5" name="input_modifyContractType_documentsRequired" required="required" id="input_modifyContractType_documentsRequired" />' . $result['documentsRequired'] . '</textarea>
 						</p>
-						<p> <input type="submit" value="Modifier" name="post_modifyContractType" /> <input type="reset" value="Réinitialiser" />
+						<p> <input type="hidden" value="' . htmlentities($_GET['id_contract-type'], ENT_COMPAT, 'UTF-8') . '" name="input_modifyContractType_id_contract-type" />
+							<input type="submit" value="Modifier" name="post_modifyContractType" /> <input type="reset" value="Réinitialiser" />
 						</p>
 					</fieldset>
 				</form>
