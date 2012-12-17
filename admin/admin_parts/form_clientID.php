@@ -5,15 +5,17 @@
         <label for="clientID">ID : </label>
         <input type="text" name="clientID" onBlur="verifChamps(this, false, 0, 0)">
         <input type="submit" value="Valider">
+        <input type="reset" value="Réinitialiser">
     </fieldset>
 </form>
 
 <form method="GET" action="./admin.php" class="form_admin"  onSubmit="return verifForm(this)">
     <fieldset>
         <legend>Recherche d'un client</legend>
+
         <input type="hidden" name="action" value="searchClientName">
-        <label for="clientName">Nom : </label>
-        <input type="text" name="clientName" onBlur="verifChamps(this, false, 1, 0)">
+        <label for="clientName">Nom : </label><input type="text" name="clientName" onBlur="verifChamps(this, false, 1, 0)">
+        <br/>
         <label for="clientDay">Date de naissance : </label>
         <select name="clientDay">
             <?php
@@ -38,6 +40,7 @@
         </select>
         <br/>
         <input type="submit" value="Rechercher">
+        <input type="reset" value="Réinitialiser">
 
     </fieldset>
 </form>

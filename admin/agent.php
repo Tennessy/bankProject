@@ -21,6 +21,7 @@ if($_SESSION['category'] == 'agent'){
 
 		else if(isset($_GET['action']) && $_GET['action'] == 'showAgenda'){
 			include('admin/admin_parts/form_showAgenda.php');
+			include("admin/admin_parts/form_addEvent.php");
 		}
 
 		else{
@@ -51,26 +52,22 @@ function getClientDatas($id){
 ?>
 <script type="text/javascript">
 function verifChamps(champ, acceptVide, type, limite){
-	console.log('ERROR');
 	var error = false;
 	var reg = new RegExp('^[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*[\.]{1}[a-z]{2,6}$', 'i');
 
 	if(!acceptVide && champ.value.length <= 0){
 		champ.style.backgroundColor = 'red';
 		error = true;
-		console.log('VIDE');
 	}
 
 	if(type == 0){
 		if(isNaN(champ.value)){
-			console.log('Not A Number');
 			champ.style.backgroundColor = 'red';
 			error = true;
 		}
 	}
 	else if(type == 2){
 		if(!reg.test(champ.value)){
-			console.log('Pas un Email');
 			champ.style.backgroundColor = 'red';
 			error = true;
 		}
@@ -78,7 +75,6 @@ function verifChamps(champ, acceptVide, type, limite){
 	
 	if(limite>0){
 		if(champ.value.length > limite){
-			console.log('Trop Long');
 			champ.style.backgroundColor = 'red';
 			error = true;
 		}
@@ -96,7 +92,6 @@ function verifForm(form){
 	//alert(inputList[1].value);
 
 	for(var i=0; i<inputList.length; i++){
-		console.log(inputList[i].value)
 		if(inputList[i].value.length <= 0){
 			alert('Veuillez remplir tous les champs');
 			return false;
@@ -109,7 +104,7 @@ function verifForm(form){
 	return true;
 }
 
-function verifTransfer(form){
+function verifTransferSubmit(form){
 		var dep = form.elements['depot'];
 		var ret = form.elements['retrait'];
 		var bal = form.elements['balanceAccount']
@@ -124,6 +119,21 @@ function verifTransfer(form){
 			return false;
 		}
 
+		else if(dep.value.length > 0 && dep.value <0 || ret.value.length > 0 && ret.value <0){
+			alert('Merci d\'entrer une valeur positive');
+			return false;
+		}
+
+		return true;
+}
+
+function verifTransfer(input){
+	if(isNaN(input.value) || input.value < 0){
+		input.style.backgroundColor = 'red';
+	}
+	else{
+		input.style.backgroundColor = 'white';
+	}
 }
 
 </script>

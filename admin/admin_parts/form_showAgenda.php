@@ -164,7 +164,7 @@ if(isset($_POST['actionAgenda']) && !empty($_POST['actionAgenda']) && ($_POST['a
 		echo '</table>';
 		echo '</div>';
 
-		include("admin/admin_parts/form_addEvent.php");
+		
 
 	}
 
@@ -179,7 +179,8 @@ if(isset($_POST['actionAgenda']) && !empty($_POST['actionAgenda']) && ($_POST['a
 
 		if(mysql_num_rows($conseillerList) != 0){
 
-			echo '<input type="hidden" name="action" value="showAgenda"/><input type="hidden" name="clientID" value="'.$_GET['clientID'].'"/>
+			echo '<input type="hidden" name="action" value="showAgenda">
+			<input type="hidden" name="clientID" value="'.$_GET['clientID'].'">
 			<select name="conseillerID" >';
 			while($conseiller = mysql_fetch_array($conseillerList)){
 				echo '<option value="'.$conseiller[0].'">'. $conseiller[0] . ' - ' . $conseiller[4] . ' ' . $conseiller[5] . '</option>';
