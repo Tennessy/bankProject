@@ -1,7 +1,5 @@
 <?php
 
-$months = array('Janvier','Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
-$days = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
 $horaire = array(8, 9, 10, 11, 12 ,13, 14, 15, 16, 17);
 
 

@@ -1,6 +1,4 @@
-
 <?php
-
 
 if($_SESSION['category'] == 'agent'){
 	if(isset($_GET['clientID']) && !empty($_GET['clientID']) && getClientDatas($_GET['clientID']) != null){
@@ -19,7 +17,7 @@ if($_SESSION['category'] == 'agent'){
 
 		else if(isset($_GET['action']) && $_GET['action'] == 'showAgenda'){
 			include('admin/admin_parts/form_showAgenda.php');
-			if(isset($_GET['conseillerID']) && !empty($_GET['conseillerID']))
+			if(isset($_GET['conseillerID']) && !empty($_GET['conseillerID']) && is_numeric($_GET['conseillerID']))
 				include("admin/admin_parts/form_addEvent.php");
 		}
 
