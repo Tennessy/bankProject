@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1deb1
+-- version 3.5.4
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le : Mer 05 Décembre 2012 à 22:15
--- Version du serveur: 5.5.28
--- Version de PHP: 5.3.10-1ubuntu3.4
+-- Host: localhost
+-- Generation Time: Dec 17, 2012 at 12:36 AM
+-- Server version: 5.5.25
+-- PHP Version: 5.4.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,29 +17,37 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `takl_bank`
+-- Database: `takl_bank`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `accounts`
+-- Table structure for table `accounts`
 --
 
 CREATE TABLE IF NOT EXISTS `accounts` (
   `id_account` bigint(20) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `id_owner` int(8) unsigned zerofill NOT NULL,
   `account-type` int(3) unsigned zerofill NOT NULL,
-  `openingDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `openingDate` date NOT NULL,
   `balance` bigint(20) NOT NULL,
   `overdraft` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_account`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`id_account`, `id_owner`, `account-type`, `openingDate`, `balance`, `overdraft`) VALUES
+(00000000000000000001, 00000001, 001, '2012-12-06', 874, 500),
+(00000000000000000002, 00000001, 001, '2012-12-06', -475, 1500);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `accounts-type`
+-- Table structure for table `accounts-type`
 --
 
 CREATE TABLE IF NOT EXISTS `accounts-type` (
@@ -47,23 +55,67 @@ CREATE TABLE IF NOT EXISTS `accounts-type` (
   `name` varchar(30) NOT NULL,
   `documentsRequired` text NOT NULL,
   PRIMARY KEY (`id_account-type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `accounts-type`
+--
+
+INSERT INTO `accounts-type` (`id_account-type`, `name`, `documentsRequired`) VALUES
+(001, 'testAccountType', 'none');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `agenda`
+-- Table structure for table `agenda`
 --
 
 CREATE TABLE IF NOT EXISTS `agenda` (
-  `trucàfaire` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`trucàfaire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `id` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `id_client` int(8) unsigned zerofill NOT NULL,
+  `id_employee` int(8) unsigned zerofill NOT NULL,
+  `startingDate` date NOT NULL,
+  `startingTime` time NOT NULL,
+  `motif` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+
+--
+-- Dumping data for table `agenda`
+--
+
+INSERT INTO `agenda` (`id`, `id_client`, `id_employee`, `startingDate`, `startingTime`, `motif`) VALUES
+(00000000022, 00000001, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
+(00000000023, 00000001, 00000002, '2012-12-10', '10:00:00', 'openAccount-testAccountType'),
+(00000000024, 00000001, 00000002, '2012-12-10', '09:00:00', 'openAccount-testAccountType'),
+(00000000025, 00000001, 00000002, '2012-12-17', '08:00:00', 'openAccount-testAccountType'),
+(00000000026, 00000001, 00000002, '2012-12-24', '08:00:00', 'openAccount-testAccountType'),
+(00000000027, 00000001, 00000002, '2012-12-31', '08:00:00', 'openAccount-testAccountType'),
+(00000000028, 00000002, 00000002, '2012-12-31', '11:00:00', 'openAccount-testAccountType'),
+(00000000029, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
+(00000000030, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
+(00000000031, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
+(00000000032, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
+(00000000033, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
+(00000000034, 00000002, 00000002, '2012-12-10', '11:00:00', 'openAccount-testAccountType'),
+(00000000035, 00000002, 00000002, '2012-12-17', '11:00:00', 'openAccount-testAccountType'),
+(00000000036, 00000001, 00000002, '2012-12-10', '14:00:00', 'openAccount-testAccountType'),
+(00000000037, 00000001, 00000002, '2012-12-10', '15:00:00', 'openAccount-testAccountType'),
+(00000000038, 00000002, 00000002, '2012-12-10', '16:00:00', 'openAccount-testAccountType'),
+(00000000039, 00000002, 00000002, '2012-12-03', '08:00:00', 'openAccount-testAccountType'),
+(00000000040, 00000002, 00000002, '2012-12-03', '09:00:00', 'openAccount-testAccountType'),
+(00000000041, 00000002, 00000002, '2012-12-04', '08:00:00', 'openAccount-testAccountType'),
+(00000000042, 00000002, 00000002, '2012-12-04', '10:00:00', 'openAccount-testAccountType'),
+(00000000043, 00000002, 00000002, '2012-12-03', '11:00:00', 'openAccount-testAccountType'),
+(00000000044, 00000002, 00000002, '2012-12-06', '16:00:00', 'openAccount-testAccountType'),
+(00000000045, 00000002, 00000009, '2012-12-16', '09:00:00', 'openAccount-testAccountType'),
+(00000000047, 00000001, 00000002, '2012-12-16', '10:00:00', 'openAccount-testAccountType'),
+(00000000048, 00000001, 00000002, '2012-12-16', '08:00:00', 'autre');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `clients`
+-- Table structure for table `clients`
 --
 
 CREATE TABLE IF NOT EXISTS `clients` (
@@ -81,30 +133,46 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `address_city` varchar(255) NOT NULL,
   `address_zipcode` varchar(10) NOT NULL,
   `address_state` varchar(100) NOT NULL,
-  `phone_home` tinyint(20) unsigned NOT NULL,
-  `phone_mobile` tinyint(20) unsigned NOT NULL,
+  `phone_home` varchar(20) NOT NULL,
+  `phone_mobile` varchar(20) NOT NULL,
   `email` varchar(254) NOT NULL,
   PRIMARY KEY (`id_client`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`id_client`, `id_employee`, `lastName`, `firstName`, `secondName`, `thirdName`, `birthDate`, `gender`, `job`, `civilStatus`, `address_location`, `address_city`, `address_zipcode`, `address_state`, `phone_home`, `phone_mobile`, `email`) VALUES
+(00000001, 00000001, 'efze', 'azdf', 'azds', 'yuiop', '1912-11-10', 'm', 'none', 's', '56 azertyui', 'qsdfgh', '34567', 'sdfghjkk', '0987654321', '0687654321', 'azert.zert@dfghjkl.com'),
+(00000002, 00000001, 'ghjk', 'qsdfg', 'wxcvb', 'yuiop', '1912-11-10', 'm', 'none', 's', '56 azertyui', 'qsdfgh', '34567', 'sdfghjkk', '255', '255', 'azert.zert@dfghjkl.com');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contracts`
+-- Table structure for table `contracts`
 --
 
 CREATE TABLE IF NOT EXISTS `contracts` (
   `id_contract` bigint(20) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `id_owner` int(8) unsigned zerofill NOT NULL,
   `contract-type` int(3) unsigned zerofill NOT NULL,
-  `openingDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `openingDate` date NOT NULL,
   PRIMARY KEY (`id_contract`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `contracts`
+--
+
+INSERT INTO `contracts` (`id_contract`, `id_owner`, `contract-type`, `openingDate`) VALUES
+(00000000000000000001, 00000001, 001, '2012-12-06'),
+(00000000000000000002, 00000001, 001, '2012-12-06');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contracts-type`
+-- Table structure for table `contracts-type`
 --
 
 CREATE TABLE IF NOT EXISTS `contracts-type` (
@@ -113,12 +181,19 @@ CREATE TABLE IF NOT EXISTS `contracts-type` (
   `monthlyCost` int(10) unsigned NOT NULL,
   `documentsRequired` text NOT NULL,
   PRIMARY KEY (`id_contract-type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `contracts-type`
+--
+
+INSERT INTO `contracts-type` (`id_contract-type`, `name`, `monthlyCost`, `documentsRequired`) VALUES
+(001, 'test', 200, 'none');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `employees`
+-- Table structure for table `employees`
 --
 
 CREATE TABLE IF NOT EXISTS `employees` (
@@ -130,10 +205,10 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `firstName` varchar(30) NOT NULL,
   PRIMARY KEY (`id_employee`),
   KEY `name` (`lastName`,`firstName`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Contenu de la table `employees`
+-- Dumping data for table `employees`
 --
 
 INSERT INTO `employees` (`id_employee`, `login`, `hPasswd`, `category`, `lastName`, `firstName`) VALUES

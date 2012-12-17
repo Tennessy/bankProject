@@ -50,7 +50,8 @@
 			<option value="autre">Autre</option>
 
 		</select>
-
-		<input type="submit">
+		<br/>
+		<input type="submit" value="Ajouter">
+		<input type="reset" value="Réinitialiser">
 	</fieldset>
 </form>

@@ -189,7 +189,7 @@ div#content {
 .form_admin p {
 	margin-top: 15px;
 }
-.form_admin input[type="text"], .form_admin input[type="password"], .form_admin select, .form_admin textarea {
+.form_admin input[type="text"], .form_admin input[type="password"], .form_admin textarea {
 	width: 58%;
 	border: 1px solid #CCCCCC;
 }
@@ -223,19 +223,17 @@ div#content {
 .table_input {
 	
 }
+
 /** END Form styling **/
 
 /** BEGIN Default table styling **/
 table {
 	border-collapse: collapse;
+	width:100%;
 }
 th, td {
 	border: 1px solid black;
-	width: 20%;
 	text-align: center;
-}
-td {
-	text-align: left;
 }
 caption {
 	font-weight: bold;
