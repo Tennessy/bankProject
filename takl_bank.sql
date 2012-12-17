@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 17, 2012 at 12:36 AM
+-- Generation Time: Dec 17, 2012 at 08:00 PM
 -- Server version: 5.5.25
 -- PHP Version: 5.4.4
 
@@ -78,39 +78,27 @@ CREATE TABLE IF NOT EXISTS `agenda` (
   `startingTime` time NOT NULL,
   `motif` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
 
 --
 -- Dumping data for table `agenda`
 --
 
 INSERT INTO `agenda` (`id`, `id_client`, `id_employee`, `startingDate`, `startingTime`, `motif`) VALUES
-(00000000022, 00000001, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
-(00000000023, 00000001, 00000002, '2012-12-10', '10:00:00', 'openAccount-testAccountType'),
-(00000000024, 00000001, 00000002, '2012-12-10', '09:00:00', 'openAccount-testAccountType'),
-(00000000025, 00000001, 00000002, '2012-12-17', '08:00:00', 'openAccount-testAccountType'),
-(00000000026, 00000001, 00000002, '2012-12-24', '08:00:00', 'openAccount-testAccountType'),
-(00000000027, 00000001, 00000002, '2012-12-31', '08:00:00', 'openAccount-testAccountType'),
-(00000000028, 00000002, 00000002, '2012-12-31', '11:00:00', 'openAccount-testAccountType'),
-(00000000029, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
-(00000000030, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
-(00000000031, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
-(00000000032, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
-(00000000033, 00000002, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
-(00000000034, 00000002, 00000002, '2012-12-10', '11:00:00', 'openAccount-testAccountType'),
-(00000000035, 00000002, 00000002, '2012-12-17', '11:00:00', 'openAccount-testAccountType'),
-(00000000036, 00000001, 00000002, '2012-12-10', '14:00:00', 'openAccount-testAccountType'),
-(00000000037, 00000001, 00000002, '2012-12-10', '15:00:00', 'openAccount-testAccountType'),
-(00000000038, 00000002, 00000002, '2012-12-10', '16:00:00', 'openAccount-testAccountType'),
-(00000000039, 00000002, 00000002, '2012-12-03', '08:00:00', 'openAccount-testAccountType'),
-(00000000040, 00000002, 00000002, '2012-12-03', '09:00:00', 'openAccount-testAccountType'),
-(00000000041, 00000002, 00000002, '2012-12-04', '08:00:00', 'openAccount-testAccountType'),
-(00000000042, 00000002, 00000002, '2012-12-04', '10:00:00', 'openAccount-testAccountType'),
-(00000000043, 00000002, 00000002, '2012-12-03', '11:00:00', 'openAccount-testAccountType'),
-(00000000044, 00000002, 00000002, '2012-12-06', '16:00:00', 'openAccount-testAccountType'),
-(00000000045, 00000002, 00000009, '2012-12-16', '09:00:00', 'openAccount-testAccountType'),
-(00000000047, 00000001, 00000002, '2012-12-16', '10:00:00', 'openAccount-testAccountType'),
-(00000000048, 00000001, 00000002, '2012-12-16', '08:00:00', 'autre');
+(00000000049, 00000001, 00000002, '2012-12-10', '08:00:00', 'openAccount-testAccountType'),
+(00000000050, 00000001, 00000002, '2012-12-17', '08:00:00', 'openAccount-testAccountType'),
+(00000000051, 00000001, 00000002, '2012-12-17', '10:00:00', 'openAccount-testAccountType'),
+(00000000052, 00000001, 00000002, '2012-12-31', '08:00:00', 'openAccount-testAccountType'),
+(00000000053, 00000001, 00000002, '2012-12-31', '11:00:00', 'openAccount-testAccountType'),
+(00000000054, 00000001, 00000002, '2012-12-17', '13:00:00', 'openAccount-testAccountType'),
+(00000000055, 00000001, 00000002, '2012-12-17', '14:00:00', 'openAccount-testAccountType'),
+(00000000056, 00000001, 00000002, '2012-12-17', '16:00:00', 'openAccount-testAccountType'),
+(00000000057, 00000001, 00000002, '2012-12-17', '09:00:00', 'openAccount-testAccountType'),
+(00000000058, 00000001, 00000002, '2012-12-18', '08:00:00', 'openAccount-testAccountType'),
+(00000000059, 00000001, 00000002, '2012-12-31', '09:00:00', 'openAccount-testAccountType'),
+(00000000060, 00000001, 00000009, '2012-12-18', '08:00:00', 'openAccount-testAccountType'),
+(00000000061, 00000001, 00000009, '2012-12-17', '09:00:00', 'openAccount-testAccountType'),
+(00000000062, 00000001, 00000009, '2012-12-18', '09:00:00', 'openAccount-testAccountType');
 
 -- --------------------------------------------------------
 
@@ -218,6 +206,34 @@ INSERT INTO `employees` (`id_employee`, `login`, `hPasswd`, `category`, `lastNam
 (00000009, 'wijkhuisen.chloe', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'C', 'Wijkhuisen', 'ChloÃ©'),
 (00000010, 'fiaud.nicolas', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'C', 'Fiaud', 'Nicolas'),
 (00000011, 'boufatah.amine', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'A', 'Amine', 'Boufatah');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unavailability`
+--
+
+CREATE TABLE IF NOT EXISTS `unavailability` (
+  `id` int(8) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `id_employee` int(8) unsigned zerofill NOT NULL,
+  `startingDate` date NOT NULL,
+  `starting_time` time NOT NULL,
+  `ending_time` time NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `unavailability`
+--
+
+INSERT INTO `unavailability` (`id`, `id_employee`, `startingDate`, `starting_time`, `ending_time`) VALUES
+(00000012, 00000002, '2012-12-17', '09:00:00', '10:00:00'),
+(00000013, 00000002, '2012-12-24', '08:00:00', '09:00:00'),
+(00000014, 00000002, '2012-12-24', '09:00:00', '10:00:00'),
+(00000015, 00000002, '2012-12-24', '10:00:00', '11:00:00'),
+(00000016, 00000002, '2012-12-31', '10:00:00', '11:00:00'),
+(00000017, 00000002, '2012-12-31', '13:00:00', '14:00:00'),
+(00000018, 00000002, '2012-12-17', '15:00:00', '16:00:00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
