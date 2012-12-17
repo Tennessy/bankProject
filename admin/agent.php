@@ -1,8 +1,4 @@
-
 <?php
-
-$dataName = array('id client', 'id employee', 'Nom', 'Prenom', 'Deuxième prenom', 'Troisième prenom', 'Date de naissance', 'Genre', 'Emploi', 'Status civil', 'Adresse', 'Ville', 'Code postal', 'Etat', 'Numero de Telephone', 'Numero de portable', 'Email');
-$months = array('Janvier','Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
 
 if($_SESSION['category'] == 'agent'){
 	if(isset($_GET['clientID']) && !empty($_GET['clientID']) && getClientDatas($_GET['clientID']) != null){
@@ -21,7 +17,8 @@ if($_SESSION['category'] == 'agent'){
 
 		else if(isset($_GET['action']) && $_GET['action'] == 'showAgenda'){
 			include('admin/admin_parts/form_showAgenda.php');
-			include("admin/admin_parts/form_addEvent.php");
+			if(isset($_GET['conseillerID']) && !empty($_GET['conseillerID']) && is_numeric($_GET['conseillerID']))
+				include("admin/admin_parts/form_addEvent.php");
 		}
 
 		else{
@@ -37,17 +34,6 @@ if($_SESSION['category'] == 'agent'){
 	}
 }
 
-function getClientDatas($id){
-	$db = quickConnectDb();
-	$clientDatas = mysql_query('SELECT * FROM clients WHERE id_client="' . $id . '"');
-	mysql_close($db);
-
-	if(mysql_num_rows($clientDatas) != 0){
-		return mysql_fetch_array($clientDatas);
-	}
-
-	return null;
-}
 
 ?>
 <script type="text/javascript">

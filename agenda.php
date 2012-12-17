@@ -1,6 +1,37 @@
 <?php
 
-$days = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
+$horaire = array(8, 9, 10, 11, 12 ,13, 14, 15, 16, 17);
+
+
+if(isset($_GET['year']) && !empty($_GET['year']) && is_numeric($_GET['year'])){
+	$year = $_GET['year'];
+}
+else{
+	$year = date('Y');
+}
+
+if(isset($_GET['month']) && !empty($_GET['month']) && is_numeric($_GET['month'])){
+	$month = $_GET['month'];
+}
+else{
+	$month = date('m');
+}
+
+if(isset($_GET['day']) && !empty($_GET['day']) && is_numeric($_GET['day'])){
+	$day = $_GET['day'];
+}
+else{
+	$day = date('d');
+}
+
+$temp = date('w', strtotime($year . '-' . $month . '-' . $day));
+
+if($temp != 0){	
+	$date = explode('-', date('Y-m-d', strtotime($year.'-'.$month.'-'.$day.'-'.($temp-1).' DAY')));
+	$day = $date[2];
+	$month = $date[1];
+	$year = $date[0];
+}
 
 
 function getAll($startY){
@@ -69,7 +100,7 @@ function getEvents($day, $month, $year, $conseillerID){
 	}
 
 	$db = quickConnectDb();
-	$rdvList = mysql_query("SELECT * FROM agenda WHERE id_employee='{$_GET['conseillerID']}' AND ( startingDate IN (".implode(',', $dateList)." ))");
+	$rdvList = mysql_query("SELECT * FROM agenda WHERE id_employee='{$conseillerID}' AND ( startingDate IN (".implode(',', $dateList)." ))");
 	mysql_close($db);
 
 	$r = array();
@@ -80,6 +111,30 @@ function getEvents($day, $month, $year, $conseillerID){
 		}
 		$r[strtotime($a['startingDate'])][$time[0]]['id'] = $a['id'];
 		$r[strtotime($a['startingDate'])][$time[0]]['id_client'] = $a['id_client'];
+	}
+
+	return $r;
+}
+
+function getIndisp($day, $month, $year, $conseillerID){
+	$dateList = array();
+	for($i=0; $i<7; $i++){
+		array_push($dateList, "'".date('Y-m-d', strtotime($year.'-'.$month.'-'.$day.'+'.$i.' DAY'))."'");
+	}
+
+	$db = quickConnectDb();
+	$indispList = mysql_query("SELECT * FROM unavailability WHERE id_employee='{$conseillerID}'  AND ( startingDate IN (".implode(',', $dateList)." ))");
+	mysql_close($db);
+
+	$r = array();
+	while($a = mysql_fetch_array($indispList)){
+		$time = explode(':',$a['starting_time']);
+		$timeE = explode(':',$a['ending_time']);
+		if($time[0] < 10){
+			$time[0] = intval($time[0]);
+		}
+		$r[strtotime($a['startingDate'])][$time[0]]['id'] = $a['id'];
+
 	}
 
 	return $r;
