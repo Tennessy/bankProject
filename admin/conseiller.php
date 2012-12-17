@@ -18,6 +18,10 @@
 		if (isset($_GET['action']) && $_GET['action'] == 'deleteContract') {
 			include_once(adminPhp("form_deleteContract"));
 		}
+		if (isset($_GET['action']) && $_GET['action'] == 'showAgenda'){
+			include_once(adminPhp("form_showAgenda"));
+			include_once(adminPhp("form_unavailability"));
+		}
 
 	} else {
 		// On fait rien pour le moment
