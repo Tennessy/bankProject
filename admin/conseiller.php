@@ -22,6 +22,10 @@
 			include_once(adminPhp("form_showAgenda"));
 			include_once(adminPhp("form_unavailability"));
 		}
+		if (isset($_GET['action']) && $_GET['action'] == 'deleteAccount') {
+			include_once(adminPhp("form_deleteAccount"));
+
+		}
 
 	} else {
 		// On fait rien pour le moment

@@ -15,6 +15,9 @@
 		if (isset($_GET['action']) && $_GET['action'] == 'addContractType') {
 			include_once(adminPhp("form_addContractType"));
 		}
+		if (isset($_GET['action']) && $_GET['action'] == 'modifyContractType') {
+			include_once(adminPhp("form_modifyContractType"));
+		}
 
 	} else {
 		// On ne fait rien pour le moment
