@@ -36,7 +36,7 @@ if (
 			$query = sprintf("SELECT * FROM `clients` WHERE `id_client` = '%s'", mysql_real_escape_string($_GET['idClient']));
 			$rep = mysql_query($query);
 			if (mysql_num_rows($rep) != 0) {
-				$query = "SELECT * FROM `contracts-type`";
+				$query = "SELECT * FROM `contracts-type` WHERE `available`='1'";
 				$rep = mysql_query($query);
 				if (mysql_num_rows($rep) != 0) {
 					echo'
@@ -69,7 +69,7 @@ if (
 						</form>
 					';
 				} else {
-					echo showFormError('', 'Aucun contrat dans la base de donnée');
+					echo showFormError('', 'Aucun type de contrat disponible dans la base de données.');
 				}
 			} else {
 				echo showFormError('ID Client', 'Aucun client ne correspond à cet ID');

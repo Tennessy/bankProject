@@ -30,13 +30,13 @@ if (
 if ($queryDB) {
 	$id_shDB = quickConnectDB();
 	if ($id_shDB != NULL) {
-		$query = sprintf("SELECT * FROM `contracts-type`;");
+		$query = sprintf("SELECT * FROM `contracts-type` WHERE `available` = '1';");
 		$rep = mysql_query($query);
 		if (mysql_num_rows($rep) != 0) {
 			echo'
 				<form method="post" action="admin.php?action=modifyContractType" name="form_modifyContractType" id="form_modifyContractType" class="form_admin">
 					<fieldset>
-						<legend>Liste des contrats</legend>
+						<legend>Liste des types de contrat</legend>
 						<table class="table_modifyContractType">
 							<tr>
 								<td>Nom</td>
@@ -57,7 +57,7 @@ if ($queryDB) {
 				</form>
 			';
 		} else {
-			echo showFormError('', 'Aucun type de contrat dans la base de donnée');
+			echo showFormError('', 'Aucun type de contrat dans la base de données.');
 		}
 		mysql_close($id_shDB);
 	}
@@ -75,7 +75,7 @@ if (isset($_GET['id_contract-type'])) {
 				echo'
 				<form method="post" action="admin.php?action=modifyContractType" name="form_modifyContractType" id="form_modifyContractType" class="form_admin">
 					<fieldset>
-						<legend>Ajouter un type de contrat</legend>
+						<legend>Modifier un type de contrat</legend>
 						<p> <label for="input_modifyContractType_name">Nom : </label> <input type="text" name="input_modifyContractType_name" required="required" value="' . $result['name'] . '" id="input_modifyContractType_name" />
 						</p>
 						<p> <label for="input_modifyContractType_monthlyCost">Coût mensuel : </label> <input type="text" name="input_modifyContractType_monthlyCost" required="required" value="' . $result['monthlyCost'] . '" id="input_modifyContractType_monthlyCost" />

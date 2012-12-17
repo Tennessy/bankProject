@@ -8,7 +8,7 @@ if (
 	if ($queryDB) {
 		$id_shDB = quickConnectDB();
 		if ($id_shDB != NULL) {
-			$query = sprintf("INSERT INTO `accounts-type`(`id_account-type`, `name`, `documentsRequired`) VALUES ('', '%s', '%s')",
+			$query = sprintf("INSERT INTO `accounts-type`(`id_account-type`, `name`, `documentsRequired`, `available`) VALUES ('', '%s', '%s', '1')",
 				mysql_real_escape_string($_POST['input_addAccountType_name']),
 				mysql_real_escape_string($_POST['input_addAccountType_documentsRequired']));
 			$validQuery = mysql_query($query);

@@ -12,7 +12,7 @@ if (
 	if ($queryDB) {
 		$id_shDB = quickConnectDB();
 		if ($id_shDB != NULL) {
-			$query = sprintf("INSERT INTO `contracts-type`(`id_contract-type`, `name`, `monthlyCost`, `documentsRequired`) VALUES ('', '%s', '%s', '%s')",
+			$query = sprintf("INSERT INTO `contracts-type`(`id_contract-type`, `name`, `monthlyCost`, `documentsRequired`, `available`) VALUES ('', '%s', '%s', '%s', '1')",
 				mysql_real_escape_string($_POST['input_addContractType_name']),
 				mysql_real_escape_string($_POST['input_addContractType_monthlyCost']),
 				mysql_real_escape_string($_POST['input_addContractType_documentsRequired']));

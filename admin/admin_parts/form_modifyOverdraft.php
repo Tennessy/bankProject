@@ -74,7 +74,7 @@ if (
 						</form>
 					';
 				} else {
-					echo showFormError('', 'Aucun contrat pour ce client dans la base de donnée');
+					echo showFormError('', 'Aucun contrat pour ce client dans la base de données.');
 				}
 			} else {
 				echo showFormError('ID Client', 'Aucun client ne correspond à cet ID');
