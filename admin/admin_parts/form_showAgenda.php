@@ -35,11 +35,11 @@ if(isset($_POST['actionAgenda']) && !empty($_POST['actionAgenda']) && ($_POST['a
 				mysql_close($bd);
 			}
 			else{
-				echo 'Cette plage horaire est deja prise';
+				echo showFormError('','Cette plage horaire est deja prise');
 			}
 		}
 		else{
-			echo 'Veuillez entrer une date valide';
+			echo showFormError('','Veuillez entrer une date valide');
 		}
 	}
 }
@@ -80,12 +80,13 @@ if(isset($_POST['actionAgenda']) && !empty($_POST['actionAgenda']) && ($_POST['a
 				}
 
 				else{
-					echo 'Aucun document requis pour ce motif de rendez-vous';
+					echo showFormError('','Aucun document requis pour ce motif de rendez-vous');
 				}
+				echo showFormSuccess('Ajout effectué avec succès');
 			}
 
 			else{
-				echo 'Veuillez choisir une plage horaire libre';
+				echo showFormError('','Veuillez choisir une plage horaire libre');
 			}
 
 		}
@@ -165,7 +166,7 @@ if(isset($_POST['actionAgenda']) && !empty($_POST['actionAgenda']) && ($_POST['a
 						$l=0;
 						while($l<count($eventList[$currentDate]) && !$event){
 							if(isset($eventList[$currentDate][$horaire[$i]])){
-								echo '<td><a href="./admin.php?action=showAgenda&day='.$day.'&month='.$month.'&year='.$year.'&idRdv='.$eventList[$currentDate][intval($horaire[$i])]["id"].'&clientID='.$eventList[$currentDate][intval($horaire[$i])]['id_client'].'">'. $eventList[$currentDate][intval($horaire[$i])]['id_client'] .'</a></td>';
+								echo '<td><a href="./admin.php?action=showAgenda&day='.$day.'&month='.$month.'&year='.$year.'&idRdv='.$eventList[$currentDate][intval($horaire[$i])]["id"].'&clientID='.$eventList[$currentDate][intval($horaire[$i])]['id_client'].'&conseillerID='.$id_conseiller.'">'. $eventList[$currentDate][intval($horaire[$i])]['id_client'] .'</a></td>';
 								$event = true;
 							}
 							$l++;
@@ -219,7 +220,7 @@ if(isset($_POST['actionAgenda']) && !empty($_POST['actionAgenda']) && ($_POST['a
 		}
 
 		else{
-			echo 'Aucun conseiller présent dans la base de données';
+			echo showFormError('','Aucun conseiller présent dans la base de données');
 		}
 
 		echo '</fieldset> </form>';
