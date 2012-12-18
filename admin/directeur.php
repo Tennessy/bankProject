@@ -6,8 +6,8 @@
 		if (isset($_GET['action']) && $_GET['action'] == 'addEmployee') {
 			include_once(adminPhp("form_addEmployee"));
 		}
-		if (isset($_GET['action']) && $_GET['action'] == 'aboutEmployee') {
-			include_once(adminPhp("form_aboutEmployee"));
+		if (isset($_GET['action']) && $_GET['action'] == 'modifyEmployee') {
+			include_once(adminPhp("form_modifyEmployee"));
 		}
 		if (isset($_GET['action']) && $_GET['action'] == 'addAccountType') {
 			include_once(adminPhp("form_addAccountType"));
@@ -26,6 +26,9 @@
 		}
 		if (isset($_GET['action']) && $_GET['action'] == 'deleteContractType') {
 			include_once(adminPhp("form_deleteContractType"));
+		}
+		if (isset($_GET['action']) && $_GET['action'] == 'stats') {
+			include_once(adminPhp("form_stats"));
 		}
 
 	} else {

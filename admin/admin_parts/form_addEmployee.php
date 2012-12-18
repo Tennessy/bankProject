@@ -19,10 +19,22 @@ if (
 		$queryDB = FALSE;
 	}
 
+	// Test si le login est déjà existant
+	$id_shDB = quickConnectDB();
+	if ($id_shDB != NULL) {
+		$query = sprintf("SELECT * FROM `employees` WHERE `login` = '%s'",
+		mysql_real_escape_string($_POST['input_modifyEmployee_login']));
+		$rep = mysql_query($query);
+		if (mysql_num_rows($rep) != 0) {
+			echo showFormError('Login', 'Déjà existant, changez de login');
+			$queryDB = FALSE;
+		}
+		mysql_close($id_shDB);
+	}
+
 	if ($queryDB) {
 		$hPasswd = sha1($_POST['input_addEmployee_passwd']);
 		$id_shDB = quickConnectDB();
-		echo $id_shDB;
 		if ($id_shDB) {
 			$query = sprintf("INSERT INTO `employees`(`id_employee`, `login`, `hPasswd`, `category`, `lastName`, `firstName`) VALUES ('', '%s', '{$hPasswd}', '%s', '%s', '%s');",
 				mysql_real_escape_string($_POST['input_addEmployee_login']),

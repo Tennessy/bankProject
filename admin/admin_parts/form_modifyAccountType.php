@@ -41,7 +41,7 @@ if ($queryDB) {
 			while ($result = mysql_fetch_array($rep)) {
 				echo '<tr>';
 				echo '<td><a href="admin.php?action=modifyAccountType&id_account-type=' . $result['id_account-type'] . '">' . htmlentities($result['name'], ENT_COMPAT, 'UTF-8') . '</a></td>';
-				echo '<td>' . htmlentities($result['documentsRequired'], ENT_COMPAT, 'UTF-8'). '</td>';
+				echo '<td>' . htmlentities($result['documentsRequired'], ENT_COMPAT, 'UTF-8') . '</td>';
 				echo '</tr>';
 			}
 			echo'

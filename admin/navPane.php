@@ -45,7 +45,7 @@
 			echo '<b>Employé</b>';
 			echo '<ul>';
 			echo 	'<li><a href="admin.php?action=addEmployee">Ajouter un employé</a></li>';
-			echo 	'<li><a href="admin.php?action=aboutEmployee">Infos employé</a></li>';
+			echo 	'<li><a href="admin.php?action=modifyEmployee">Modifier un employé</a></li>';
 			echo '</ul>';
 			echo '<b>Comptes et Contrats</b>';
 			echo '<ul>';
@@ -58,6 +58,7 @@
 			echo '</ul>';
 			echo '<b>Statistiques</b>';
 			echo '<ul>';
+			echo 	'<li><a href="admin.php?action=stats">Afficher</a></li>';
 			echo '</ul>';
 		}
 	}
