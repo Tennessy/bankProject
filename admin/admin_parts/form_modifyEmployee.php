@@ -62,7 +62,7 @@ if (
 if ($queryDB) {
 	$id_shDB = quickConnectDB();
 	if ($id_shDB != NULL) {
-		$query = sprintf("SELECT * FROM `employees`;");
+		$query = sprintf("SELECT * FROM `employees` WHERE `category`='A' OR `category`='C';");
 		$rep = mysql_query($query);
 		if (mysql_num_rows($rep) != 0) {
 			echo'

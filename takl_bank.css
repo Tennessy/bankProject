@@ -59,6 +59,8 @@ div#page {
 	width: 1000px;
 	min-height: 600px;
 	padding-bottom: 8px;
+	font-family: "Times New Roman", serif;
+	font-size: 16px;
 }
 
 body {
@@ -80,7 +82,7 @@ div#header {
 div#header_login {
 	float: right;
 	height: 115px;
-	width: 250px;
+	width: 280px;
 	margin: 10px 8px 15px 8px;
 	border: 1px solid #1879D2;
 	border-radius: 3px;
@@ -90,6 +92,7 @@ div#header_login {
 
 #logo {
 	margin: 10px 0px 0px 10px;
+	float: left;
 }
 /** END Header styling **/
 
