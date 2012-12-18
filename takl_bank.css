@@ -194,11 +194,11 @@ div#content {
 .form_admin p {
 	margin-top: 15px;
 }
-.form_admin input[type="text"], .form_admin input[type="password"], .form_admin textarea, {
+.form_admin input[type="text"], .form_admin input[type="password"] {
 	width: 58%;
 	border: 1px solid #CCCCCC;
 }
-.form_admin input, .form_admin textarea {
+.form_admin textarea {
 	width: 58%;
 	border: 1px solid #CCCCCC;
 }

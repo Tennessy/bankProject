@@ -56,8 +56,8 @@ if (
 	if ($queryDB) {
 		$id_shDB = quickConnectDB();
 		if ($id_shDB) {
-			$query = sprintf("INSERT INTO `clients`(`id_client`, `id_employee`, `lastName`, `firstName`, `secondName`, `thirdName`, `birthDate`, `gender`, `job`, `civilStatus`, `address_location`, `address_city`, `address_zipcode`, `address_state`, `phone_home`, `phone_mobile`, `email`)
-				VALUES ('',  '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
+			$query = sprintf("INSERT INTO `clients`(`id_client`, `id_employee`, `lastName`, `firstName`, `secondName`, `thirdName`, `birthDate`, `gender`, `job`, `civilStatus`, `address_location`, `address_city`, `address_zipcode`, `address_state`, `phone_home`, `phone_mobile`, `email`, `registeringDate`)
+				VALUES ('',  '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', now());",
 				mysql_real_escape_string($_SESSION['id_employee']),
 				mysql_real_escape_string($_POST['input_addClient_lastName']),
 				mysql_real_escape_string($_POST['input_addClient_firstName']),
@@ -122,7 +122,7 @@ if (
 			<input type="text" name="input_addClient_thirdName" value="<?php if ($incompleteForm && isset($_POST['input_addClient_thirdName'])) echo $_POST['input_addClient_thirdName']; ?>" id="input_thirdName" class="input_names" />
 		</p>
 		<p> <label for="input_addClient_birthDate">Date de naissance :</label>
-			<input type="text" name="input_addClient_birthDate" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_birthDate'])) echo $_POST['input_addClient_birthDate']; ?>" id="input_addClient_birthDate" />
+			<input type="text" name="input_addClient_birthDate" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_birthDate'])) echo $_POST['input_addClient_birthDate']; ?>" placeholder="JJ/MM/AAAA" id="input_addClient_birthDate" />
 		</p>
 		<p> <label for="select_addClient_civilStatus">Situation familiale :</label>
 			<select name="select_addClient_civilStatus" id="select_addClient_civilStatus">
