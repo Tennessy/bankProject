@@ -59,10 +59,10 @@ if (
 	<fieldset>
 		<legend>Nouvel employé</legend>
 		<p> <label for="input_addEmployee_lastName">Nom : </label>
-			<input type="text" name="input_addEmployee_lastName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_lastName'])) echo $_POST['input_addEmployee_lastName']; ?>" id="input_addEmployee_lastName" />
+			<input type="text" name="input_addEmployee_lastName" required="required" placeholder="exemple: Dupont" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_lastName'])) echo $_POST['input_addEmployee_lastName']; ?>" id="input_addEmployee_lastName" />
 		</p>
 		<p> <label for="input_addEmployee_firstName">Prénom : </label>
-			<input type="text" name="input_addEmployee_firstName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_firstName'])) echo $_POST['input_addEmployee_firstName']; ?>" id="input_addEmployee_firstName" />
+			<input type="text" name="input_addEmployee_firstName" required="required" placeholder="exemple: Martin" value="<?php if ($incompleteForm && isset($_POST['input_addEmployee_firstName'])) echo $_POST['input_addEmployee_firstName']; ?>" id="input_addEmployee_firstName" />
 		</p>
 		<p> <label for="input_addEmployee_category">Catégorie : </label>
 			<input type="radio" name="input_addEmployee_category" value="A"
@@ -87,10 +87,10 @@ if (
 			>Conseiller
 		</p>
 		<p> <label for="input_addEmployee_login">Login : </label>
-			<input type="text" name="input_addEmployee_login" required="required" id="input_addEmployee_login" />
+			<input type="text" name="input_addEmployee_login" placeholder="exemple: dupont.martin" required="required" id="input_addEmployee_login" />
 		</p>
 		<p> <label for="input_addEmployee_passwd">Mot de passe : </label>
-			<input type="password" name="input_addEmployee_passwd" required="required" id="input_addEmployee_passwd" />
+			<input type="password" name="input_addEmployee_passwd" placeholder="exemple: abcdef.!éè" required="required" id="input_addEmployee_passwd" />
 		</p>
 		<p> <input type="submit" value="Envoyer" name="post_addEmployee" />
 			<input type="reset" value="Réinitialiser" />
