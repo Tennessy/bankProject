@@ -86,6 +86,10 @@ div#header_login {
 	text-align: right;
 	background: url("images/header_login_background.png");
 }
+
+#logo {
+	margin: 10px 0px 0px 10px;
+}
 /** END Header styling **/
 
 /** BEGIN Navigation + Content divs styling **/
@@ -189,8 +193,11 @@ div#content {
 .form_admin p {
 	margin-top: 15px;
 }
-.form_admin input[type="text"], .form_admin input[type="password"], .form_admin textarea {
+.form_admin input[type="text"], .form_admin input[type="password"], .form_admin textarea, {
 	width: 58%;
+	border: 1px solid #CCCCCC;
+}
+.form_admin select {
 	border: 1px solid #CCCCCC;
 }
 .form_admin input:hover, .form_admin input:focus, .form_admin select:hover, .form_admin select:focus,
@@ -239,3 +246,13 @@ caption {
 	font-weight: bold;
 }
 /** END Default table styling **/
+
+#bloc {
+	width: 500px;
+	text-align: center;
+	background-color: white;
+	color: red;
+	margin:0 auto;
+	margin-top: 50px;
+	border: 1px solid #CCCCCC;
+}

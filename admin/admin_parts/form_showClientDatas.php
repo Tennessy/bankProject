@@ -27,16 +27,16 @@ if(mysql_num_rows($clientDatas) != 0){
 
 				case 7:
 				echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label><input type="text" name="' . $i . '" value="';
-				if($clientDatas[7] == 'm') {echo 'Homme';}
+				if($clientDatas[7] == 'M') {echo 'Homme';}
 				else { echo 'Femme'; }
 				echo '" disabled="disabled"/></br>';
 				break;
 
 				case 9:
 				echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label><input type="text" name="' . $i . '" value="';
-				if($clientDatas[9] == 's') {echo "Celibataire";}
-				else if($clientDatas[9] == 'c') {echo "Concubinage";}
-				else {echo "marié";}
+				if($clientDatas[9] == 'SI') {echo "Celibataire";}
+				else if($clientDatas[9] == 'DI') {echo "Divorcé";}
+				else {echo "Marié";}
 				echo '" disabled="disabled"/></br>';
 				break;
 

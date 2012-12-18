@@ -17,6 +17,7 @@
 <body>
 	<div id="page">
 		<div id="header">
+			<a href="admin.php"><img src="images/logo.png" id="logo"></a>
 			<div id="header_login">
 			<?php
 				if (isset($_SESSION['id_employee'])) {

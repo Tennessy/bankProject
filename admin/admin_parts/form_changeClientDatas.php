@@ -16,11 +16,11 @@ if(isset($_POST['actionForm']) && !empty($_POST['actionForm']) && $_POST['action
 			$erreur = true;	
 		}
 
-		else if($i==7 && ($_POST['7'] != 'm' && $_POST['7'] != 'f' )){
+		else if($i==7 && ($_POST['7'] != 'M' && $_POST['7'] != 'F' )){
 			$erreur = true;
 		}
 
-		else if ($i==9 && ($_POST['9'] != 's' && $_POST['9'] != 'm' && $_POST['9'] != 'c')){
+		else if ($i==9 && ($_POST['9'] != 'MA' && $_POST['9'] != 'DI' && $_POST['9'] != 'SI')){
 			$erreur = true;
 		}
 
@@ -102,29 +102,29 @@ if($clientDatas != null){
 
 			case 7:
 			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label> <input type="radio" name="' .$i .'"';
-			if($clientDatas['gender'] == 'm'){
+			if($clientDatas['gender'] == 'M'){
 				echo   '" checked="checked ';
 			}
-			echo '" value="m">Homme';
+			echo '" value="M">Homme';
 			echo '<input type="radio" name="' .$i;
-			if($clientDatas['gender'] == 'f'){
+			if($clientDatas['gender'] == 'F'){
 				echo 'checked="checked';
 			}
-			echo '" value="f">Femme <br/>';
+			echo '" value="F">Femme <br/>';
 			break;
 
 			case 9:
 			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label> <input type="radio" name="' .$i . '"';
-			if($clientDatas['civilStatus'] == 's'){ echo 'checked="checked" ';}
-			echo 'value="s" >Celibataire';
+			if($clientDatas['civilStatus'] == 'SI'){ echo 'checked="checked" ';}
+			echo 'value="SI" >Célibataire';
 
 			echo '<input type="radio" name="' .$i .'"';
-			if($clientDatas['civilStatus'] == 'c'){ echo 'checked="checked" ';}
-			echo 'value="c" >Concubinage';
+			if($clientDatas['civilStatus'] == 'DI'){ echo 'checked="checked" ';}
+			echo 'value="DI" >Divorcé';
 
 			echo '<input type="radio" name="' .$i .'"';
-			if($clientDatas['civilStatus'] == 'm'){ echo 'checked="checked" ';}
-			echo 'value="c" >Marié<br/>';
+			if($clientDatas['civilStatus'] == 'MA'){ echo 'checked="checked" ';}
+			echo 'value="MA" >Marié<br/>';
 			break;
 
 			default :
