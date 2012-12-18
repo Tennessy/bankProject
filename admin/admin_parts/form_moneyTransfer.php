@@ -10,7 +10,7 @@ if(isset($_POST['depot']) || isset($_POST['retrait'])){
 			mysql_query("UPDATE accounts SET balance='{$total}' WHERE id_account='{$_POST['accountID']}'");
 		}
 		else{
-			echo 'Merci d\'indiquer un montant positif dans le cas d\'un dépot';
+			echo showFormError('','Merci d\'indiquer un montant positif dans le cas d\'un dépot');
 		}
 
 	}
@@ -22,15 +22,15 @@ if(isset($_POST['depot']) || isset($_POST['retrait'])){
 			if($total >= (0 - $balanceAccount['overdraft']))
 				mysql_query("UPDATE accounts SET balance='{$total}' WHERE id_account='{$_POST['accountID']}'");
 			else
-				echo 'Merci de rentrer un montant ne dépassant pas le découvert';
+				echo showFormError('','Merci de rentrer un montant ne dépassant pas le découvert');
 		}
 		else{
-			echo 'Merci d\'indiquer un montant positif dans le cas d\'un retrait';
+			echo showFormError('','Merci d\'indiquer un montant positif dans le cas d\'un retrait');
 		}
 	}
 
 	else{
-		echo 'Merci de remplir correctement le formulaire';
+		echo showFormError('','Merci de remplir correctement le formulaire');
 	}
 }
 
@@ -59,7 +59,7 @@ if(mysql_num_rows($clientAccountList) != 0){
 }
 
 else{
-	echo 'Ce client ne possède aucun compte';
+	echo showFormError('','Ce client ne possède aucun compte');
 }
 mysql_close($db);
 

@@ -35,13 +35,13 @@
 
 				if(mysql_num_rows($accountTypes) != 0){
 					while($accountType = mysql_fetch_array($accountTypes)){
-						echo '<option value="openAccount-'. $accountType['name'] .'">Ouverture de compte '. $accountType['name'] .'</option>';
+						echo '<option value="Ouvir un compte-'. $accountType['name'] .'">Ouverture de compte '. $accountType['name'] .'</option>';
 					}
 				}
 
 				if(mysql_num_rows($contractTypes) != 0){
 					while($contractType = mysql_fetch_array($contractTypes)){
-						echo '<option value="openContract-'. $contractType['name'] .'">Ouverture de compte '. $contractType['name'] .'</option>';
+						echo '<option value="Ouvrir un contrat-'. $contractType['name'] .'">Ouverture de contrat '. $contractType['name'] .'</option>';
 					}
 				}
 			?>

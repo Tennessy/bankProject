@@ -61,12 +61,12 @@ if(isset($_GET['action']) && $_GET['action'] == 'searchClientName'){
             }
         }
         else{
-            echo 'Aucun client n\'à été trouvé';
+            echo showFormError('', 'Aucun client trouvé dans la base de données');
         }
     }
 
     else{
-        echo 'Veuillez remplir tous les champs';
+        echo showFormError('', 'Veuillez remplir tous les champs requis');
     }
 }
 ?>
