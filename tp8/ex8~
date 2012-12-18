@@ -1,7 +1,0 @@
-#!/bin/sed -rf
-
-# Supprime toutes les balises html :
-# s/<[^>]*>//g
-
-# Supprime intelligemment toutes les balises html (version prof) :
-

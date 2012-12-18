@@ -1,2 +1,0 @@
-#!/bin/bash
-egrep -i '^(Acte|Scène|Rideau)' "$1"
