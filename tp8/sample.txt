@@ -1,0 +1,43 @@
+= OpenStreetMap =
+
+== Extrait de Wikipédia ==
+
+=== CC BY-SA 3.0 ===
+
+*OpenStreetMap** est un projet qui a pour but de créer des //cartes libres// du monde sous //licence libre//, en utilisant le //système GPS// et d'autres données libres. Il a été initié en juillet 2004 par Steve Coast au University College de Londres. Par l'utilisation de moyens informatiques basés sur //Internet// qui permettent l'intervention et la collaboration de tout utilisateur volontaire, OpenStreetMap relève de la //géomatique// 2.0 et est aussi une contribution à ce qui est appelé la //néogéographie//.
+
+== Genèse ==
+
+Le constat de Steve Coast a été que l'agence cartographique publique de son pays, l'Ordnance Survey, conserve le droit de reproduction à son profit, alors qu'elle est financée par ses principaux utilisateurs, les contribuables britanniques2.
+
+La situation est identique dans la quasi-totalité des États, excepté les États-Unis dont la constitution interdit ce double financement. Aux Pays-Bas et au Canada, une partie des données géographiques numériques sont libres ou le seront bientôt.
+
+La mise en ligne de certaines cartes (le Géoportail de l'Institut géographique national français, par exemple) ne correspond pas à une publication libre, puisque la reproduction, la réutilisation ou la modification sont presque toujours soumises à des restrictions importantes.
+
+L'activité déployée pour OpenStreetMap s'inscrit dans le courant de la culture libre, qui préconise les logiciels les plus ouverts possibles. La plupart des utilisateurs souscrivent à l'idée d'empêcher l'appropriation définitive par des organismes commerciaux de biens dont l'ensemble de la communauté a besoin.
+
+== Mise en œuvre ==
+
+À la manière de [Wikipédia http://fr.wikipedia.org/wiki/Wikipedia], tous les internautes naviguant dans le Web peuvent contribuer à la création et à la //numérisation// de cartes. Des éditeurs permettent de réaliser en ligne des cartes en se basant sur un fond d'//image satellitaire// mis à disposition par Yahoo!. Cependant, ces images satellitaires ne couvrent pas en haute résolution l'ensemble du globe. C'est pourquoi il est possible d'introduire des données provenant de récepteurs GPS. Il suffit de réaliser un itinéraire et de positionner le récepteur GPS en mode enregistrement, puis de le restituer sur le serveur de données d'//OpenStreetMap// situé au Royaume-Uni et géré par la Fondation OpenStreetMap.
+
+Les points d'intérêts (**POI**, en anglais « Point of Interest »), c'est-à-dire, toutes les mentions utiles (noms, largeur, nature du revêtement, sens uniques, parcs, zones résidentielles et d'activités, barrières, pistes cyclables, boîtes aux lettres, cabines téléphoniques, commerces, fontaines, etc.) sont notés, soit en les écrivant, soit en les photographiant, soit en les décrivant sur un appareil d'enregistrement audio.
+
+Tous les modes de locomotion terrestre possibles sont utilisés (à pied, à deux-roues, à rollers, à skis, en véhicule automobile particulier, en bus, en train, etc.)
+
+Les enregistrements de données GPS peuvent être rendus publics par l'intermédiaire du site d'OSM. Cela a pour avantage de les rendre visibles dans les outils d'édition des cartes. Cela facilite la couverture internationale : une personne séjournant dans une autre région ou un autre pays que le sien peut publier les tracés de ses parcours, à charge pour les habitants permanents de les compléter.
+
+La carte principale est une carte routière comprenant des éléments figurés de manière plate, mais une carte du relief avec les courbes de niveaux est également disponible.
+
+Les outils disponibles au début de 2010 permettent d'utiliser les données d'OpenStreetMap pour :
+- alimenter la carte mondiale et en extraire certaines parties pour son propre usage (du globe complet à la carte locale) ;
+- créer des cartes interactives ou statiques ;
+- créer des cartes pour de nombreux terminaux GPS ;
+- alimenter certains //SIG//.
+
+
+(...)
+
+== Références ==
+
+- [Article sur Wikipédia http://fr.wikipedia.org/wiki/Openstreetmap]
+- [OpenStreetMap http://www.openstreetmap.org/]

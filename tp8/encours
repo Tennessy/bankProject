@@ -1,0 +1,4 @@
+grep '^[[:upper:]][[:upper:] ]*:' cyrano_cleaned.txt | cut -d: -f1 | sort | uniq
+
+egrep -c '^CYRANO(:1| \()' cyrano_cleaned.txt
+

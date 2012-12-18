@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "Avec grep :"
+grep -i 'fourmi' "$1"
+
+# ou mieux (attention, pas équivalent)
+REfourmi='(^|[^[:alpha:]])(F|f)ourmis?([^[:alpha:]]|$)'
+echo
+echo "Avec grep (bis) :"
+egrep "$REfourmi" "$1"
+
+echo
+echo
+echo "Avec sed :"
+sed -n 's/fourmi/fourmi/p' "$1"
+
+# ou mieux
+echo
+echo "Avec sed (bis) :"
+sed -r -n "s/($REfourmi)/\1/p" "$1"
+
+echo
+echo "sed fourmi2carpe :"
+sed -r -n "s/Fourmi/carpe/gp;s/fourmi/carpe/gp" "$1"
+

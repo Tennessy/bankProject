@@ -1,0 +1,10 @@
+#!/bin/bash
+
+comptes() {
+	while read perso; do
+		nb=$(egrep -c "^$perso(:| \()" "$1")
+		echo "$nb $perso"
+	done
+}
+
+grep '^[[:upper:]][[:upper:] ]*:' "$1" | cut -d: -f1 | sort | uniq | comptes "$1" | sort -n -r | head -n 5

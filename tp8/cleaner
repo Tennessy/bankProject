@@ -1,0 +1,7 @@
+#!/bin/bash
+
+debut=$(grep -n 'START OF THIS PROJECT' "$1" | cut -d: -f1)
+fin=$(grep -n 'END OF THIS PROJECT' "$1" | cut -d: -f1)
+
+cat "$1" | tr -d "\r" | head -n $(($fin-1)) | tail -n +$(($debut+1))
+
