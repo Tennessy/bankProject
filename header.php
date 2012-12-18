@@ -17,11 +17,13 @@
 <body>
 	<div id="page">
 		<div id="header">
-			<a href="admin.php"><img src="images/logo.png" id="logo"></a>
+			<a href="index.php"><img src="images/logo.png" id="logo"></a>
 			<div id="header_login">
 			<?php
 				if (isset($_SESSION['id_employee'])) {
-					echo 'Connecté en tant que ' . $_SESSION['category'];
+					echo '<p>Connecté</p>';
+					echo '<p>' . htmlentities($_SESSION['firstName'], ENT_COMPAT, 'UTF-8') . ', ' . strtoupper(htmlentities($_SESSION['lastName'], ENT_COMPAT, 'UTF-8')) . '</p>';
+					echo '<p>' . strtoupper($_SESSION['category']) . '</p>';
 					include(rootPhp("form_logout"));
 				} else {
 					include(rootPhp("form_login"));

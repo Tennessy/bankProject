@@ -58,6 +58,7 @@ div#page {
 	text-align: left; /* Resetting the text-align property to it's default */
 	width: 1000px;
 	min-height: 600px;
+	padding-bottom: 8px;
 }
 
 body {
@@ -197,12 +198,16 @@ div#content {
 	width: 58%;
 	border: 1px solid #CCCCCC;
 }
+.form_admin input, .form_admin textarea {
+	width: 58%;
+	border: 1px solid #CCCCCC;
+}
 .form_admin select {
 	border: 1px solid #CCCCCC;
 }
 .form_admin input:hover, .form_admin input:focus, .form_admin select:hover, .form_admin select:focus,
 .form_admin textarea:hover, .form_admin textarea:focus {
-	background-color: DDEEFF;
+	background-color: #DDEEFF;
 	border: 1px solid #999999;
 }
 .form_admin input[type="submit"], .form_admin input[type="reset"] {
@@ -251,8 +256,23 @@ caption {
 	width: 500px;
 	text-align: center;
 	background-color: white;
-	color: red;
+	color: green;
 	margin:0 auto;
 	margin-top: 50px;
 	border: 1px solid #CCCCCC;
+}
+
+#footer {
+	clear: both;
+	display: block;
+	position: relative;
+	bottom: 0px;
+	width: 500px;
+	background-color: black;
+	color: white;
+	margin:0 auto;
+}
+
+#footer p {
+	text-align: center;
 }
