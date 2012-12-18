@@ -114,15 +114,15 @@ if (
 			>Madame
 		</p>
 		<p> <label for="input_addClient_lastName">Nom :</label>
-			<input type="text" name="input_addClient_lastName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_lastName'])) echo $_POST['input_addClient_lastName']; ?>" id="input_addClient_lastName" />
+			<input type="text" name="input_addClient_lastName" placeholder="exemple: dupont" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_lastName'])) echo $_POST['input_addClient_lastName']; ?>" id="input_addClient_lastName" />
 		</p>
 		<p> <label for="input_names">Prénoms :</label>
-			<input type="text" name="input_addClient_firstName" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_firstName'])) echo $_POST['input_addClient_firstName']; ?>" id="input_firstName" class="input_names" />
+			<input type="text" name="input_addClient_firstName" placeholder="exemple: martin" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_firstName'])) echo $_POST['input_addClient_firstName']; ?>" id="input_firstName" class="input_names" />
 			<input type="text" name="input_addClient_secondName" value="<?php if ($incompleteForm && isset($_POST['input_addClient_secondName'])) echo $_POST['input_addClient_secondName']; ?>" id="input_secondName" class="input_names" />
 			<input type="text" name="input_addClient_thirdName" value="<?php if ($incompleteForm && isset($_POST['input_addClient_thirdName'])) echo $_POST['input_addClient_thirdName']; ?>" id="input_thirdName" class="input_names" />
 		</p>
 		<p> <label for="input_addClient_birthDate">Date de naissance :</label>
-			<input type="text" name="input_addClient_birthDate" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_birthDate'])) echo $_POST['input_addClient_birthDate']; ?>" placeholder="JJ/MM/AAAA" id="input_addClient_birthDate" />
+			<input type="text" name="input_addClient_birthDate" placeholder="JJ/MM/AAAA" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_birthDate'])) echo $_POST['input_addClient_birthDate']; ?>" id="input_addClient_birthDate" />
 		</p>
 		<p> <label for="select_addClient_civilStatus">Situation familiale :</label>
 			<select name="select_addClient_civilStatus" id="select_addClient_civilStatus">
@@ -176,13 +176,13 @@ if (
 			<input type="text" name="input_addClient_addressState" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_addressState'])) echo $_POST['input_addClient_addressState']; ?>" id="input_addClient_addressState" />
 		</p>
 		<p> <label for="input_addClient_phoneHome">Téléphone fixe :</label>
-			<input type="text" name="input_addClient_phoneHome" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_phoneHome'])) echo $_POST['input_addClient_phoneHome']; ?>" id="input_addClient_phoneHome" />
+			<input type="text" name="input_addClient_phoneHome" placeholder="exemple : 0123456789" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_phoneHome'])) echo $_POST['input_addClient_phoneHome']; ?>" id="input_addClient_phoneHome" />
 		</p>
 		<p> <label for="input_addClient_phoneMobile">Téléphone mobile :</label>
-			<input type="text" name="input_addClient_phoneMobile" value="<?php if ($incompleteForm && isset($_POST['input_addClient_phoneMobile'])) echo $_POST['input_addClient_phoneMobile']; ?>" id="input_addClient_phoneMobile" />
+			<input type="text" name="input_addClient_phoneMobile" placeholder="exemple : 0623456789" value="<?php if ($incompleteForm && isset($_POST['input_addClient_phoneMobile'])) echo $_POST['input_addClient_phoneMobile']; ?>" id="input_addClient_phoneMobile" />
 		</p>
 		<p> <label for="input_addClient_email">Courriel :</label>
-			<input type="text" name="input_addClient_email" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_email'])) echo $_POST['input_addClient_email']; ?>" id="input_addClient_" />
+			<input type="text" name="input_addClient_email" placeholder="exemple : email.exemple@exemple.com" required="required" value="<?php if ($incompleteForm && isset($_POST['input_addClient_email'])) echo $_POST['input_addClient_email']; ?>" id="input_addClient_" />
 		</p>
 	</fieldset>
 	<fieldset id="fieldset_submit">
