@@ -3,13 +3,22 @@
 
 if(isset($_POST['actionForm']) && !empty($_POST['actionForm']) && $_POST['actionForm'] == 'change'){
 
-
 	$erreur=false;
 
 	for($i = 0; $i < count($_POST)-4; $i++){
 
-		if(!isset($_POST[$i]) || empty($_POST[$i])){
+		if($i != 4 && $i != 5 && $i!= 15 && (!isset($_POST[$i]) || empty($_POST[$i]))){
 			$erreur=true;
+		}
+
+		else if($i == 4 || $i == 5){
+			if(!isset($_POST['4']) || empty($_POST['4'])){
+				$_POST['4'] = '';
+			}
+
+			if(!isset($_POST['5']) || empty($_POST['5'])){
+				$_POST['5'] = '';
+			}
 		}	
 
 		else if(($i == 0 || $i ==1) && (!is_numeric($_POST['0']) || !is_numeric($_POST['1']) || $_POST['1'] < 0 || $_POST['0'] < 0 || $_POST['1'] > 99999999 || $_POST['0'] > 99999999)){
@@ -24,8 +33,13 @@ if(isset($_POST['actionForm']) && !empty($_POST['actionForm']) && $_POST['action
 			$erreur = true;
 		}
 
-		else if(($i==14 || $i==15) && (!is_numeric($_POST['14']) || !is_numeric($_POST['15']))){
+		else if($i==14  && !is_numeric($_POST['14'])){
 			$erreur = true;
+		}
+		else if($i==15){
+			if(!isset($_POST['15']) || empty($_POST['15'])){
+				$_POST['15'] = '';
+			}
 		}
 	}
 
@@ -106,6 +120,7 @@ if($clientDatas != null){
 				echo   '" checked="checked ';
 			}
 			echo '" value="M">Homme';
+
 			echo '<input type="radio" name="' .$i;
 			if($clientDatas['gender'] == 'F'){
 				echo 'checked="checked';
@@ -128,7 +143,14 @@ if($clientDatas != null){
 			break;
 
 			default :
-			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label><input type="text" name="' . $i . '" value="'. $clientDatas[$i] .'" onBlur="verifChamps(this, false, '; 
+			echo '<label for="'.$i.'">' .$dataName[$i]. ' : </label><input type="text" name="' . $i . '" value="'. $clientDatas[$i] .'" onBlur="verifChamps(this, ';
+				if($i==4 || $i==5 || $i==15){
+					echo 'true, '; 	
+				}
+				else{
+					echo 'false, '; 	
+				}
+				
 				if($i == 16){
 					echo '2';
 				}
@@ -138,7 +160,10 @@ if($clientDatas != null){
 				else{
 					echo '1';
 				}
-				echo ', 0)"></br>';
+
+				echo ', 0';
+				
+				echo ')"></br>';
 			break;
 }
 

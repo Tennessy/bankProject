@@ -45,8 +45,8 @@ if($_SESSION['category'] == 'agent'){
 	//Verification des champs lors d'un onBlur 
 		//champ -> l'input a verifier
 		//acceptVide -> true->Peut etre vide   false->Ne doit pas etre vide
-		//type -> 0->Contient du texte	1->Contient des chiffres	2->Contient un e-mail
-		//limite -> Taille maximum de caractère accepté		0-> Pas de limite
+		//type -> 0->Contient des chiffres	1->Contient du texte	2->Contient un e-mail
+		//limite -> Taille minimum de caractère accepté		0-> Pas de limite
 function verifChamps(champ, acceptVide, type, limite){
 	var error = false;
 	var reg = new RegExp('^[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*[\.]{1}[a-z]{2,6}$', 'i');
@@ -64,10 +64,7 @@ function verifChamps(champ, acceptVide, type, limite){
 	}
 
 	else if(type == 1){
-		if(!isNaN(champ.value)){
-			champ.style.backgroundColor = 'red';
-			error = true;
-		}
+		
 	}
 
 	else if(type == 2){
@@ -78,7 +75,7 @@ function verifChamps(champ, acceptVide, type, limite){
 	}
 	
 	if(limite>0){
-		if(champ.value.length > limite){
+		if(champ.value.length < limite){
 			champ.style.backgroundColor = 'red';
 			error = true;
 		}
@@ -96,10 +93,6 @@ function verifForm(form){
 	var inputList = form.getElementsByTagName('input');
 
 	for(var i=0; i<inputList.length; i++){
-		if(inputList[i].value.length <= 0){
-			alert('Veuillez remplir tous les champs');
-			return false;
-		}
 		if(inputList[i].style.backgroundColor == 'red'){
 			alert('Merci de remplir correctement tous les champs');
 			return false;
