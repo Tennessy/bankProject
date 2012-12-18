@@ -123,7 +123,7 @@ if($clientDatas != null){
 
 			echo '<input type="radio" name="' .$i;
 			if($clientDatas['gender'] == 'F'){
-				echo 'checked="checked';
+				echo '" checked="checked';
 			}
 			echo '" value="F">Femme <br/>';
 			break;
